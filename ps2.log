@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.27)  1 OCT 2021 01:14
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.27)  1 OCT 2021 19:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1035,42 +1035,40 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 ] [1]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 159.
+(hyperref)                than one, level fixed on input line 161.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 180.
+(Font)              scaled to size 10.95116pt on input line 182.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 180.
+(Font)              scaled to size 7.6658pt on input line 182.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 180.
+(Font)              scaled to size 5.47559pt on input line 182.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 180.
+(Font)              scaled to size 10.94882pt on input line 182.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 180.
+(Font)              scaled to size 7.66417pt on input line 182.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 180.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 180
+(Font)              scaled to size 5.47441pt on input line 182.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 182
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 180
+LaTeX Font Info:    Trying to load font information for U+msb on input line 182
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-80.
+82.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.475> not available
-(Font)              size <5> substituted on input line 180.
+(Font)              size <5> substituted on input line 182.
 
 [2] (./latex/MS.tex
-\openout4 = `ps2.ptb'.
-
 \openout4 = `ps2.ptb'.
 
 \openout4 = `ps2.ptb'.
@@ -1084,6 +1082,8 @@ LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.475> not available
 
 \openout4 = `ps2.ptb'.
 
+\openout4 = `ps2.ptb'.
+
 
 Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
 Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
@@ -1127,75 +1127,76 @@ Missing character: There is no ₂ in font [lmmono10-regular]:!
 Missing character: There is no ₂ in font [lmmono10-regular]:!
 Missing character: There is no ₂ in font [lmmono10-regular]:!
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][][][][][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][][][][][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][][][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][][][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][][][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][][][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][][][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][][][] 
  []
 
 
-Overfull \hbox (16.07524pt too wide) in paragraph at lines 487--487
+Overfull \hbox (16.07524pt too wide) in paragraph at lines 486--486
  [][][][] 
  []
 
 \openout4 = `ps2.ptb'.
 
+[4]
 \openout4 = `ps2.ptb'.
 
-[4]) (./latex/Trial.tex
-\openout4 = `ps2.ptb'.
-
+) (./latex/Trial.tex
 \openout4 = `ps2.ptb'.
 
  [5]
+\openout4 = `ps2.ptb'.
+
 \openout4 = `ps2.ptb'.
 
 \openout4 = `ps2.ptb'.
@@ -1233,10 +1234,12 @@ Missing character: There is no ∀ in font [lmroman10-italic]:mapping=tex-text;!
 \openout4 = `ps2.ptb'.
 
 [7]
-Overfull \hbox (29.55998pt too wide) in paragraph at lines 717--724
+Overfull \hbox (29.55998pt too wide) in paragraph at lines 719--726
 []\TU/lmr/m/n/10.95 Finally, the MTT interpretation of adjectives is definition
 ally equal to IVs, $\U/stmry/m/n/10.95 J[][][]K [] []J[]K [] J[][]K[] []
  []
+
+\openout4 = `ps2.ptb'.
 
 \openout4 = `ps2.ptb'.
 
@@ -1254,42 +1257,48 @@ Missing character: There is no ₁ in font [lmsans10-regular]:mapping=tex-text;!
 \openout4 = `ps2.ptb'.
 
 
-Overfull \hbox (8.86577pt too wide) in paragraph at lines 1092--1092
+Overfull \hbox (8.86577pt too wide) in paragraph at lines 1094--1094
  [][][][] 
  []
 
 
-Overfull \hbox (8.86577pt too wide) in paragraph at lines 1092--1092
+Overfull \hbox (8.86577pt too wide) in paragraph at lines 1094--1094
  [][][][] 
  []
 
 
-Overfull \hbox (8.86577pt too wide) in paragraph at lines 1092--1092
+Overfull \hbox (8.86577pt too wide) in paragraph at lines 1094--1094
  [][][][] 
  []
 
 \openout4 = `ps2.ptb'.
 
-\openout4 = `ps2.ptb'.
-
-Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
-Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
-Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
-Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
-Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
-Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
 [9]
 \openout4 = `ps2.ptb'.
 
+
+Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
+Missing character: There is no ₁ in font [lmroman10-italic]:mapping=tex-text;!
 \openout4 = `ps2.ptb'.
 
 \openout4 = `ps2.ptb'.
 
- [10]
+\openout4 = `ps2.ptb'.
+
+[10]
 \openout4 = `ps2.ptb'.
 
 \openout4 = `ps2.ptb'.
 
+\openout4 = `ps2.ptb'.
+
+ [11]
+\openout4 = `ps2.ptb'.
+
 
 Missing character: There is no ₁ in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no ₂ in font [lmsans10-regular]:mapping=tex-text;!
@@ -1297,33 +1306,31 @@ Missing character: There is no ₁ in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no ₂ in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no ₁ in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no ₂ in font [lmsans10-regular]:mapping=tex-text;!
-Missing character: There is no ₁ in font [lmsans10-regular]:mapping=tex-text;!
-Missing character: There is no ₂ in font [lmsans10-regular]:mapping=tex-text;!
-Missing character: There is no ₁ in font [lmsans10-regular]:mapping=tex-text;!
-Missing character: There is no ₂ in font [lmsans10-regular]:mapping=tex-text;!
-Missing character: There is no ₁ in font [lmsans10-regular]:mapping=tex-text;!
-Missing character: There is no ₂ in font [lmsans10-regular]:mapping=tex-text;!
-[11]) [12]
-Overfull \hbox (2.40573pt too wide) in paragraph at lines 232--232
+\openout4 = `ps2.ptb'.
+
+\openout4 = `ps2.ptb'.
+
+) [12] [13]
+Overfull \hbox (2.40573pt too wide) in paragraph at lines 257--257
 []\TU/lmr/m/n/10.95 Aarne Ranta. “Grammatical Framework”. In: \TU/lmr/m/it/10.9
 5 J. Funct. Program. \TU/lmr/m/n/10.95 14.2 (Mar. 2004), pp. 145–
  []
 
 
-Overfull \hbox (6.1902pt too wide) in paragraph at lines 232--232
+Overfull \hbox (6.1902pt too wide) in paragraph at lines 257--257
 []\TU/lmr/m/n/10.95 Unknown. \TU/lmr/m/it/10.95 Course 5: Montague’s approach t
 o semantics\TU/lmr/m/n/10.95 . [][]$[][][][][] [] [] [] [][][][] [] [][][][][][
 ][][][][][][][][][] []
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 233.
-[13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 233.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 258.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 258.
  (./ps2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 233.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 233.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 258.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 258.
 Package rerunfilecheck Info: File `ps2.out' has not changed.
-(rerunfilecheck)             Checksum: BB08D2621CFF2555CC4CAA8AED05A07D;454.
+(rerunfilecheck)             Checksum: 335877A007D195CA808B1E195A01C621;446.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1334,12 +1341,12 @@ Package logreq Info: Writing requests to 'ps2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25490 strings out of 479819
- 459339 string characters out of 5895846
+ 25500 strings out of 479819
+ 459488 string characters out of 5895846
  1204763 words of memory out of 5000000
- 42299 multiletter control sequences out of 15000+600000
+ 42309 multiletter control sequences out of 15000+600000
  536495 words of font info for 60 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  52i,10n,109p,1795b,4859s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ps2.xdv (14 pages, 382452 bytes).
+Output written on ps2.xdv (15 pages, 424540 bytes).

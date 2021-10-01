@@ -74,9 +74,9 @@ isbn=false, doi=false, ]{biblatex}
 
 \section{Introduction} 
 
-Since Richard Montague's seminal work investigating the natural language (NL)
-semantics of quantifiers via typed, intentional Higher Order Logic (HOL)
-\cite{Montague1973}, the have been many subsequent iterations. These include:
+Since Richard Montague's seminal work investigating the Natural Language (NL)
+semantics of quantifiers via typed, intentional higher order logic 
+\cite{Montague1973}, there have been many subsequent iterations. These include:
 
 \begin{itemize}
 \item How to interface various syntactic grammar formalisms with semantic theories 
@@ -97,31 +97,32 @@ tricky \emph{donkey anaphora} \cite{Sundholm1986}.
 
 Soon thereafter Martin-Löf's student, Aarne Ranta, developed the full theory
 which applied MLTT to understand natural language semantics in a proof theoretic
-tradition, tradition very much inspired by but divergent from Montague
+tradition, very much inspired by but also divergent from Montague
 \cite{ranta1994type}. While Ranta's research focus shifted largely from
 semantics to syntax via his occupation with developing the programming language
 Grammatical Framework (GF) \cite{gf}, his original semantic work greatly
-influenced both linguists and computer scientists. Luo, a type theorist whose
-early work was an iteration of MLTT \cite{luobook} , was one of Ranta's primary
-successors in this endeavor, and along with linguists like Stergios, there has
-been much interest elaborating and expanding Ranta's original seed
-\cite{cnTypes} \cite{luoSterg}. It has been articulated that both
+influenced both linguists and computer scientists. Zhaohui Luo, a type theorist
+whose early work was an iteration of MLTT \cite{luobook} , was one of Ranta's
+primary successors in this endeavor, and along with linguists like Stergios
+Chatzikyriakidis, there has been much interest elaborating and expanding Ranta's
+original seed \cite{cnTypes} \cite{luoSterg}. It has been articulated that both
 the proof and model theoretic approaches to logic cohere in Modern Type
-Theoeries (MTTs) and their application in NL semantics \cite{luoMt}.
+Theories (MTTs) and their application in NL semantics \cite{luoMt}.
 
-One of the most central ideas in type theoretic semantics in contrast to those
-in Montagovian tradition, is the ``common nouns as types" maxim \cite{cnTypes},
-whereby the common nouns are actually a universe, instead of functions in the
-classical logic setting. This not only fits a more natural intuition, but also
-makes it convenient for creating an elaborate subtyping mechanism, namely 
-coercive subtyping as developed by Luo \cite{luoCoer} \cite{luo13}.
+A central idea in type theoretic semantics in contrast to the Montagovian
+tradition is the ``common nouns as types" maxim \cite{cnTypes}, whereby the
+common nouns are actually a universe, instead of functions in the classical
+logic setting. This not only fits a seemingly more natural intuition where the
+words denote objects, but also makes it convenient for creating an elaborate
+subtyping mechanism, namely coercive subtyping as developed by Luo
+\cite{luoCoer} \cite{luo13}.
 
-Despite the obstacles that subtyping presents in that it disallows uniqueness of
+Despite the obstacles that subtyping presents by disallowing uniqueness of
 typing, the coercive subtyping approach allows one to retain nice
-meta-properties about the type theory like canonicity, while allowing one to
-construct an ontological hierarchy that captures semantic nuance and facilitates
-computation. Computation using coercive types is just one of the many benefits
-one can leverage from this MTT approach to linguistic semantics.
+meta-properties about the type theory like canonicity. One may construct an
+ontological hierarchy that captures semantic nuance and facilitates computation.
+Computation using coercive types is just one of the many benefits one can
+leverage from this MTT approach to linguistic semantics.
 
 Proof assistants like Coq and Agda are implementations of different dependent
 type theories. They allow one to interactively build proofs, or programs, which
@@ -130,7 +131,7 @@ types are identified with theorems by way of the propositions-as-types paradigm,
 the proof assistants are capable of doing functional programming, advanced
 program verification, and constructive mathematics. It is possible to shallowly
 embed semantic encodings from both the Montagovian and MTT traditions in these
-proof assistants as was done in Coq \cite{luoCoq} \cite{fracoq}.
+proof assistants, as was done in Coq \cite{luoCoq} \cite{fracoq}.
 
 The dependent function type is core to the type theories, and it is possible to
 prove implications by constructing functions. One can therefore do inference
@@ -144,9 +145,10 @@ question if an answer is not knowable under the assumptions.
 \section{A Montagovian Example}
 
 We here showcase an example similar to the FraCas test suite to demonstrate the
-way in which one makes inference with Agda. This takes place after having
-interpreted the syntax and constructed semantic formulas in
-Montague's type theory.
+way in which one does inference with Agda. This takes place after having
+interpreted the syntax and constructed semantic formulas in Montague's logic,
+which we implement in dependent type theory. The pseudo-FraCas example is as
+follows :
 
 \begin{verbatim}
 Premise    : Every man loves a woman.
@@ -156,7 +158,7 @@ Question 2 : Does some man love a woman?
 Answer 2   : Yes.
 \end{verbatim}
 
-\subsubsection{Montague}
+\subsubsection{Montague Semantics}
 
 We can, given a means of constructing trees out of basic syntactic categories,
 assign types to the categories and functions to the rules which obey the rules'
@@ -168,26 +170,26 @@ of semantic incoherence. This can either be the result of improper typing
 assignments for given lexical categories or a failure to give ``proper" lambda
 terms to given rules or lexical constants. It is also a goal of the theory to
 only admit semantically reasonable ideas, i.e. that there aren't superfluous,
-meaningful sentences which evaluate.
+meaningless sentences admitted.
 
-While FraCoq used trees straight generated from the GF Resource Grammar Library
+While FraCoq used trees generated straight from the GF Resource Grammar Library (RGL)
 \cite{ljunglof2012bilingual}, we choose here a simpler syntax taken from
 \cite{nassli}. Our implementation differs from Fracoq in a few ways. First, we
 choose different type assignments for the grammatical categories. Additionally,
 we use Agda instead of Coq.
 
-In the Montagovian tradition one uses a simple type theory. There are two
-basic types, entities and formulas, denoted $e$ and $t$, respectively.
-Everything else is constructed as of higher order functions ending in $t$. The
-entities are meant to represent some notion of objective thing in the world,
-like John, whereas the formulas, only occurring in the codomain of a function,
-may represent utterances such as ``John walks".
+In the Montagovian tradition one uses a simple type theory. There are two basic
+types, entities and formulas, denoted $e$ and $t$, respectively. Everything else
+is constructed out of higher order functions ending in $t$. The entities are
+meant to denote some objective thing in the world, like John, whereas the
+formulas, only occurring in the codomain of a function, may represent utterances
+such as ``John walks".
 
 Given a suite with nouns (N), verbs (V), noun phrases (NP), verb phrases (VP),
 determiners (Det) and sentences (S) we can then give a Montagovian
-interpretation to accommodate the above FraCas-like example with the following.
-We assign the grammatical categories, and functions over those categories, as an
-abstract syntax in GF:
+interpretation to accommodate the above FraCas-like example. We assign the
+grammatical categories, and functions over those categories, as an abstract
+syntax in GF:
 
 \begin{verbatim}
 cat
@@ -213,10 +215,10 @@ functorially with respect to the arrows.
 
 We then know that the interpretation a given GF function $f {:} X$, must be well
 typed with the Agda semantics, i.e. $\llbracket f \rrbracket {:} \llbracket X
-\rrbracket$. Finally, the way one constructs ASTs, by plugging in functions (or
+\rrbracket$. Finally, the way one constructs ASTs by plugging in functions (or
 leaves) with the correct return type into a given function (or node), and
-evaluating based of applying the function at a node to its leaves in successive
-order. These become Agda function applications:
+witnessing an evaluation as the application of the function at a node to its
+leaves in successive order. These become Agda function applications:
 
 $$\llbracket f(g) \rrbracket \rightarrow \llbracket f \rrbracket (\llbracket g \rrbracket)$$
 
@@ -226,7 +228,30 @@ $$\llbracket f(g) \rrbracket \rightarrow \llbracket f \rrbracket (\llbracket g \
 
 \input{latex/Trial}
 
-\section{Conclusion and Conclusion}
+\section{Conclusion}
+
+We have seen that Agda is fully capable of encoding natural language semantics
+both in the Montagovian and MTT traditions. While the examples explored here
+only showcase a tiny fraction of semantically interesting phenomena, they
+nonetheless suggest that many generalizations are possible which may cover a
+larger corpus and more phenomena.
+
+In contrast to previous work with Coq, the lack of predicativaty didn't yield
+any immediate roadblocks, but this may not be the case with other examples.
+Additionally, Coq's support of coercions give it an advantage over Agda. The use
+of tactics in Coq also allows for quicker automation, as well as the possibility
+of scaling inference to much larger data sets. Nonetheless, Agda is extremely
+experimental - incorporating tactics is one of many goals of the community at
+large. Additionally, we have found the Agda presentation gives a much more
+intuitive reading of the inferences and proofs than Coq's tactics - and this is
+debatably superior from a pedagogical perspective even if less efficient. It would
+certainly be interesting to try to build a FrAgda library and explicitly compare
+it to FraCoq.
+
+Using logics and type theories to understand natural language meaning is
+exciting and important. The use of Agda to do inference provides evidence that
+proof assistants are an important tool in the semanticist's tool-belt.
+
 
 \printbibliography
 

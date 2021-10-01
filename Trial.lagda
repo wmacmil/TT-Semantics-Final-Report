@@ -1,4 +1,4 @@
-\begin{code}[hide]
+﻿\begin{code}[hide]
 {-# OPTIONS --type-in-type #-}
 
 module Trial where
@@ -11,12 +11,12 @@ open Eq using (_≡_; refl; trans; sym; cong; cong-app; subst)
 open Eq.≡-Reasoning using (begin_; _≡⟨⟩_; step-≡; _∎)
 \end{code}
 
-In this example, we follow the dependently typed approach initiated by Ranta to
-do inference on actual FraCas examples.
+We now follow the dependently typed approach to linguistic semantics initiated
+by Ranta, and do inference on actual FraCas examples in Agda.
 
-Initially, one takes the common nouns as types literally, by saying that the
-type of common nouns is actually just a universe, which simply gives the
-universe an alias of \term{CN} in Agda, $\llbracket CN \rrbracket := Set$. A man
+Initially, one takes the common nouns as types maxim literally, by saying that
+the type of common nouns is actually just a universe, which simply gives the
+universe an alias of \term{CN} in Agda, $\llbracket CN \rrbracket := Set$. Man
 is common noun, so semantically we just say $\llbracket Man \rrbracket\; {:}\;
 \llbracket CN \rrbracket$. And if there is a man John, we simply assert
 $\llbracket John \rrbracket\; {:}\; \llbracket Man \rrbracket$.
@@ -35,10 +35,10 @@ there are both impredicative and predicative universes, \term{Prop} and
 \term{CN := Set} in Coq, the type of impredicative propositions are included in
 both \cite{fracoq} and \cite{luoCoq} which is not possible in Agda. It should be
 possible to make everything predicative in Coq, but the authors' reasons for
-using impredicativity were not explicated in their work. Agda's \term{Prop} are
-by default proof irrelevant, whereas one must choose to make Coq's propositions
-proof irrelevant. We don't explore more about the implications of foundations
-here.
+using impredicativity were not explicated in their work as far as we know.
+Agda's notion of proposition, \term{Prop}, is by default proof irrelevant,
+whereas one must choose to make Coq's propositions proof irrelevant. We don't
+explore more about the implications of foundations here.
 
 Once one has a the universe of common nouns, each of which may have many
 inhabitants, we can ask how they are modified. Intransative Verbs (IVs) like
@@ -61,7 +61,7 @@ postulate
   delegate survey object surgeon human : CN
 \end{code}
 
-We can then encode the quantiers, noting that they also return just types the
+We can then encode the quantifiers, noting that they also return just types. The
 dependent type \term{P} below is propositional in Coq. These are more arguably
 more syntactically pleasing than our Mongtagovian semantics, because they only
 bind a noun and a property about that noun, rather than rigidly requiring a verb
@@ -75,22 +75,23 @@ all : (A : CN) → (P : A → Set) → Set
 all A P = (x : A) → P x
 \end{code}
 
-Wanting to do inference with these examples, we hope to show that if John is a
-man and every man walks, then John walks. The difficulty is that walk is a type
-over animals, not men, and the relation between men and animals are not yet
-covered by our type theory. The theory of coercive subtyping rectifies this and
-gives a mechanism of implicity coercing the type of men to the type of animals,
-as indeed all men are animals. One can form an order from the subtypes, with
-possible infima and suprema, that may transform some abstract ontological model
-of the domain into specific ways of using the information to prove inferences.
+Wanting to do inference with these encodings, we hope to show that if John is a
+man and every man walks, then John walks. The difficulty is that \term{walk} is
+a type over animals, not men, and the relation between men and animals are not
+yet covered by our type theory. The theory of coercive subtyping rectifies this
+and gives a mechanism of implicity coercing the type of men to the type of
+animals, as indeed all men are animals. One can form an order from the subtypes,
+with possible infima and suprema, that may transform some abstract ontological
+model of the domain into specific ways of using the ontological information to
+prove inferences.
 
 The coercions in coercive type theory can be approximated by the use of
-Agda's instance arguements, which are indicated with \codeword{{{_}}} below.
+Agda's instance arguments, which are indicated with \codeword{{{_}}} below.
 Nonetheless, Agda doesn't support coercive subtyping as developed by Luo, and
 therefore has weaknesses relative to Coq when it comes to eliminating ``coercion
 bureaucracy". A coercion is a record type parameterized by two types $x$ and $y$
 with one field \term{coe} which is merely a mapping from $x$ to $y$. We can then
-compose and apply functions with arguements for which there exists an coercion.
+compose and apply functions with arguments for which there exists an coercion.
 
 \begin{code}
 record Coercion {a} (x y : Set a) : Set a where
@@ -113,7 +114,7 @@ postulate
   mh : man → human
 \end{code}
 
-The instance arguements, similar to Haskell's type-classes, allow one to
+The instance arguments, similar to Haskell's type-classes, allow one to
 introduce the coercion information into a context so that one may compute with
 these hidden typing relations.
 
@@ -125,14 +126,14 @@ instance
 \end{code}
 
 Once one has defined instances, Agda can infer that \term{walk} is a property of
-men, which should be subtypes of animals. We must explictly explicitly declare
-this in Agda, unfortunately. A type theory with native support for coercive
-subtyping would save significant hassle, although someone with significant
-experience using Agda's instance arguements might find a superior way to do this
-rather than generating all the instances and coercion applications, possibly
-without resorting to metaprogramming. However, once we have the infastracture in
-place, we can not only infer basic facts about men, but also about animals and
-their relation to men.
+men, which should be subtypes of animals. We must explicitly declare this in
+Agda, unfortunately. A type theory with native support for coercive subtyping
+would save significant hassle, although someone with significant experience
+using Agda's instance arguments might find a superior way to do this rather than
+generating all the instances and coercion applications, possibly without
+resorting to metaprogramming. However, once we have the infrastructure in place,
+we can not only infer basic facts about men, but also about animals and their
+relation to men.
 
 \begin{code}[hide]
 manwalk : man → Set
@@ -155,14 +156,15 @@ thm3 (m , walk[m]) = ha (mh m) , walk[m]
 
 To the best of our knowledge, there is no way of coercing types directly, as in,
 one cannot simply force the type-checker in \term{thm3} to accept the man
-arguement without explicitly requiring the programmer to insert the coercions,
-\term{ha (mh m)}. Another issue is that \term{manwalk} and \term{walk} are
-explicitly different types, despite the instances allowing Agda to coerce the
-fact that a man walks, \codeword{walk[m]}, to an animal walking. We may
-reconcile this with more instance arguements, whereby we create a parameterized
-record \term{Walks} with a single data point for the walking capacity. One can
-then overload walks with all the different entities which can walk, and thereby
-not have the ugly \term{manwalks} in the type signature of \term{thm3'}.
+argument \codeword{m} without explicitly requiring the programmer to insert the
+coercions, \term{ha (mh m)}. Another issue is that \term{manwalk} and
+\term{walk} are explicitly different types, despite the instances allowing Agda
+to coerce the fact that a man walks, \codeword{walk[m]}, to a fact about an
+animal walking. We may reconcile this with more instance arguments, whereby we
+create a parameterized record \term{Walks} with a single data point for the
+walking capacity. One can then overload walks with all the different entities
+which can walk, and thereby not have the ugly \term{manwalks} in the type
+signature of \term{thm3'}.
 
 \begin{code}
 record Walks {a} (A : Set a) : Set a where
@@ -190,7 +192,7 @@ thm3' (m , walk[m]) = mh m , walk[m]
 
 \subsection{Irish Delegate Example}
 
-We finish with the following FraCas example, which includes the ditransative
+We elaborate the following FraCas example, which includes the ditransitive
 verb ``finished", the adjective ``Irish", and adverb ``on time", and the
 determiner ``the". We include a common noun for \term{object}, of which
 \term{survey} and \term{animal} should be subtypes.
@@ -215,14 +217,14 @@ instance
   doc = (dhc ⊚ hac) ⊚ aoc
 \end{code}
 
-Semantically, Ditransitive Verbs (DVs) are similair to IVs, they are just binary
+Semantically, Ditransitive Verbs (DVs) are similar to IVs, they are just binary
 functions instead of unary.
 
 $$\llbracket DV \rrbracket\; {:}\; (\llbracket x \rrbracket\; {:}\; \llbracket
 CN \rrbracket) \rightarrow (\llbracket y \rrbracket\; {:}\; \llbracket CN
 \rrbracket) \rightarrow Set$$
 
-The quality of being on time, which modifies a verb, is intpreted as a function
+The quality of being on time, which modifies a verb, is interpreted as a function
 which takes a common noun $cn$, a type indexed by $cn$ (the verb), and returns a
 type which is itself dependent on $cn$. The intuition that one can continue to
 modify a verb phrase with more adverbs is immediately obvious based of the type
@@ -275,8 +277,8 @@ record irishdelegate : CN where
 
 We can follow the same methodology as before, coercing Irish delegates to
 delegates axiomatically, and then applying the semantic interpretations of the
-words such that the types align correctly - where one sees this actually follows
-from an intuitive syntactic presentation.
+words such that the types align correctly. This follows from an intuitive,
+albeit primitive, syntactic presentation of the sentences.
 
 \begin{code}[hide]
 postulate
@@ -286,7 +288,7 @@ instance
   iddc = ⌞ idd ⌟
   idh = iddc ⊚ dhc
 \end{code}
-\begin{code}[hide]
+\begin{code}
 finishTheSurvey : human → Set
 finishTheSurvey = finish $ (the survey)
 
@@ -297,7 +299,7 @@ someDelegateFinishedTheSurveyOnTime : Set
 someDelegateFinishedTheSurveyOnTime = some delegate finishedTheSurveyOnTime
 \end{code}
 
-Once one builds a parallel infastructure for \term{irishdelegate}, one can then
+Once one builds a parallel infrastructure for \term{irishdelegate}, one can then
 proceed with the inference. We note that the work has to be doubled because
 \term{finishedTheSurveyOnTime} and \term{someDelegateFinishedTheSurveyOnTime}
 need to be refactored, renaming \term{delegate} to \term{irishdelegate}. Again,
@@ -319,8 +321,8 @@ fc55 (irishDelegate , finishedOnTime) = (idd irishDelegate) , finishedOnTime
 \end{code}
 
 We note that one could have instead included an extensionality clause for
-adjectives and adverbs, wherby one gives additional information so that the
-arguement and return types, dependent on some CN $A$, behave coherently with
+adjectives and adverbs, whereby one gives additional information so that the
+argument and return types, dependent on some noun $A$, behave coherently with
 respect to arbitrary arguements of $A$. One can then derive the adverb by
 forgetting the extensionality clause. The inference works out the same.
 
@@ -350,16 +352,17 @@ fc55' :
 fc55' (irishDelegate , finishedOnTime) = (idd irishDelegate) , finishedOnTime
 \end{code}
 
-We now investigate the possiblity of gereralizing Irish, as well as integrating
-the adjectival work with our previous work generating instance arguements for
-``walks".
+We now investigate the possiblity of gereralizing a notion of Irishness, as well
+as integrating the adjectival semantics with our previous work generating
+instance arguements for ``walks".
 
 Unlike walking, which was assumed to apply to all animals, being Irish is a
 restriction on the set of objects of some given domain. Therefore we can't just
 define the record parametrically for all common nouns, but rather must include
-an instance arguement for the coercion. Note this would break the semantic model
+an instance argument for the coercion. Note this would break the semantic model
 if we were to include the type of common noun ``Swede" with a coercion to
-humans, because one would be able to make an Irish Swede.
+humans, because one would be able to make an Irish Swede. Such a notion may or
+may not be semantically feasible depending on one's interpretation.
 
 \begin{code}
 record irishThing (A : CN) {{c : Coercion A object}} : CN where
@@ -373,13 +376,13 @@ record irishThing (A : CN) {{c : Coercion A object}} : CN where
 open irishThing {{...}} public
 \end{code}
 
-Once can now delcare Irish entities using the record for humans, delegates, and
-animals, where one can include the coercion arguements explicitly, even though
-they are inferrable. Thereafter, we can overload walks even more. Although it is
-clear that a lot of this code is boilerplate, the instance declarations must be
-nullary, and basic code generation techniques would be needed to scale this to a
-larger corpus. The point is, once we know that animals walk, anything subsumed
-under that category is straightforward to make ``walkable".
+Once can now declare Irish entities using the record for humans, delegates, and
+animals, where one can include the coercion arguments explicitly, even though
+they are inferrable. Thereafter, we can overload walks even more. Although a lot
+of this code is boilerplate, the instance declarations must be nullary, and
+basic code generation techniques would be needed to scale this to a larger
+corpus. The point is, once we know that animals walk, anything subsumed under
+that category is straightforward to make ``walkable".
 
 \begin{code}
 IrishDelegate = irishThing delegate {{doc}}
@@ -426,12 +429,11 @@ thm5 : some IrishHuman walks → some animal walks
 thm5 (mkIrish hum isIrish[hum] , snd) = (ha hum) , snd
 \end{code}
 
-If we now decide to now assume some anonymous \term{irishHuman} exists, and we
-prove that human is an animal in \term{irishAnimal}, we can see the fruits of
-our labor insofar as the identity funtion works in \term{thm6} despite the
-property of our specimin walking being of different types. In \term{thm7}, we
-can also then use our anonymous human as a witness for the existential claim
-that ``some Irish animal walks".
+If we decide to now assume some anonymous \term{irishHuman} exists, and we prove
+that human is an animal, \term{irishAnimal}, we can see the fruits of our labor
+insofar as the identity function works in \term{thm6} despite the function being
+between different types. In \term{thm7} we can also then use our anonymous
+human as a witness for the existential claim that ``some Irish animal walks".
 
 \begin{code}
 postulate
@@ -449,8 +451,10 @@ thm7 x =
   mkIrish (ha (irishThing.thing irishHuman)) ((irishThing.isIrish irishHuman)) , x
 \end{code}
 
-One might try to prove something even sillier, like that an Irish animal is an
-Irish thing object. Problematically, for the instance checker to be happy, we need to reflexivly coerce an object due to the constraint that a coercion to an object must exist to build and \term{irishThing}. This then makes it so that if we want to 
+One might try to prove something even sillier : that an Irish animal is an Irish
+object. Problematically, for the instance checker to be happy we need to
+reflexively coerce an object due to the constraint that a coercion to an object
+must exist to build an \term{irishThing}. 
 
 \begin{code}
 postulate
@@ -468,7 +472,8 @@ If one tries to prove this though, it's impossible to complete the program.
 irishHumanisIrishThing (mkIrish thing isIrish) = mkIrish ((ao (thing))) {!!}
 \end{verbatim}
 
-Agda computes with the reflexive coercion instance, and therefore we come to the unredeemable goal :
+Agda computes with the reflexive coercion instance, and therefore we come to the
+irredeemable goal :
 
 \begin{verbatim}
 Goal: irish $ ao thing
@@ -484,51 +489,112 @@ instance
 
 However, if we were to add an additional instance allowing an animal to be
 coerced to an object, this would break the necessary uniqueness of instance
-arguements, consistent with the uniqueness of coercions property in type
-theories supporting coercive subtyping. This example highlights the limitations
-of working with a make-believe subtyping mechanism. While instances give the
-Agda programmer the benefits of ad-hoc polymorphism, they are is still not a substitute for a type theory with coercive subtyping built in, especially when it comes to MTT semantics.
+arguments, consistent with the uniqueness of coercions property in type theories
+supporting coercive subtyping. This example highlights the limitations of
+working with a make-believe subtyping mechanism. While instances give the Agda
+programmer the benefits of ad-hoc polymorphism, they are is still not a
+substitute for a type theory with coercive subtyping built in, especially when
+it comes to MTT semantics.
 
 \subsection{Addendum on Inductive Types}
 
+The above method of introducing members of a specific CN was to just
+axiomatically include them. One can instead define the common nouns specifically
+as inductive types, whereby the programmer selectively includes relevant
+entities as constructors. In this view coercions are functions into other
+inductive ``supertypes".
+
 \begin{code}
 data Men : CN where
-  Steve : Men
-  Dave : Men
+  Steve Dave : Men
+
+data Women : CN where
+  Suzy : Women
 
 data Human : CN where
+  WomenHuman : Women → Human
   MenHuman : Men → Human
+\end{code}
 
-SteveHuman : Human
-SteveHuman = MenHuman Steve
+One can then define walking as a function returning a type indicating the
+truthiness of whether a given human walks. This gives us more granularity with
+which to view things, because \term{allmenWalk} is no longer just assumed, but
+proven based off the assumptions we've made about our domain.
 
--- what if we map this to actual evidence
+\begin{code}
 Walk : Human → Set
 Walk (MenHuman Steve) = ⊤
 Walk (MenHuman Dave) = ⊤
+Walk (WomenHuman Suze) = ⊤
 
 allmenWalk : all Men λ x → Walk (MenHuman x)
 allmenWalk Steve = tt
 allmenWalk Dave = tt
+\end{code}
 
+If one is in a room where \term{Dave} isn't able to walk, this can be encoded in
+the type of \term{Walk'}. One can prove that some man walks by just exhibiting
+\term{Steve} as a witness, and therefore we don't need to do inferences in the
+same way as before, because all our information (at least for this example) is
+derivable based off how we built \term{Men}, \term{Human}, and \term{Walk}.
+
+\begin{code}[hide]
 data ⊥ : Set where
-
+\end{code}
+\begin{code}
 Walk' : Human → Set
 Walk' (MenHuman Steve) = ⊤
 Walk' (MenHuman Dave) = ⊥
+Walk' (WomenHuman Suze) = ⊤
 
 someManWalks' : some Men λ x → Walk' (MenHuman x)
 proj₁ someManWalks' = Steve
 proj₂ someManWalks' = tt
-
--- allmenDontWalk : all Men λ x → Walk' (MenHuman x)
--- allmenDontWalk Steve = tt
--- allmenDontWalk Dave = {!!}
-
-steveWalks : Walk (MenHuman Steve) -- : all Men λ x → Walk (MenHuman x)
-steveWalks = tt
-
-someManWalks : some Men λ x → Walk (MenHuman x)
-proj₁ someManWalks = Steve
-proj₂ someManWalks = tt
 \end{code}
+
+We are stuck when we try to prove that all men walk, and this is by design.
+
+\begin{verbatim}
+allmenDontWalk : all Men λ x → Walk' (MenHuman x)
+allmenDontWalk Steve = tt
+allmenDontWalk Dave = {!!}
+\end{verbatim}
+
+We can use our previous definition of \term{Walks} as before, and introduce
+instance arguments so that we can build similar proofs as before and omit
+certain coercions cluttering our code - \term{thm3''} is homologous to
+\term{thm3'}.
+
+\begin{code}
+instance
+  humansWhoWalk : Walks Human
+  Walks.walks humansWhoWalk = Walk
+
+  Menwalks : Walks Men
+  Menwalks = record { walks = helper }
+    where
+      helper : Men → Set
+      helper x = Walks.walks humansWhoWalk (MenHuman x)
+
+thm3'' : some Men walks  → some Human walks
+thm3'' (fst , snd) = MenHuman fst , snd
+\end{code}
+
+A potential issue arising is that we may introduce inconsistencies into our
+universe, if we chose to define \term{Menwalks} with Dave not walking.
+
+\begin{code}
+instance
+  Menwalks' : Walks Men
+  Menwalks' = record { walks = helper }
+    where
+      helper : Men → Set
+      helper Steve = ⊤
+      helper Dave = ⊥
+\end{code}
+
+While contradicting \term{humansWhoWalk}, this isn't ruled out by Agda. The
+programmer must exert caution when making decisions using the ``inductive
+approach". This approach should be tested on a bigger corpus with many more
+syntactic and semantic phenomena to access its viability relative to the other
+approaches considered.

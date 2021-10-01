@@ -1,4 +1,4 @@
-\begin{code}[hide]%
+﻿\begin{code}[hide]%
 \>[0]\AgdaKeyword{module}%
 \>[0I]\AgdaModule{MS}\<%
 \\
@@ -26,7 +26,7 @@
 \>[0]\AgdaComment{-- https://pdfs.semanticscholar.org/f94b/268c1c91dd1de22cf978a7ea03f8860cbe9d.pdf}\<%
 \end{code}
 
-We assign Agda types to the categories, knowing that entites are postulated as a
+We assign Agda types to the categories, knowing that entities are postulated as a
 type.
 
 \begin{code}%
@@ -79,16 +79,15 @@ type.
 \AgdaFunction{t}\<%
 \end{code}
 
-Agda's equality symbol can be seen as the semantic interpretation,
-$\llbracket_\rrbracket$, of our grammar's categories, whereby we are here
+Agda's equality symbol indicates our the semantic interpretation,
+$\llbracket\_\rrbracket$, of our grammar's categories, whereby we are here
 working with a shallow embedding. One could instead elect to define both the GF
 embedding as a record and Montague's intentional type theory as an inductive
-dataype, whereby the semantics could then be given explictly. This degree of
+dataype, whereby the semantics could then be given explicitly. This degree of
 formality is not necessary for our simple examples, but doing so would allow one
-to prove metaproperties about the GF embedding, and should certainly be
-investigated.
-The two GF functions for forming sentences and verb phrases can
-then be given the following Agda interpreations.
+to prove meta-properties about the GF embedding, and should certainly be
+investigated. The two GF functions for forming sentences and verb phrases can
+then be given the following Agda interpretations.
 
 \begin{code}%
 \>[0]\AgdaFunction{sentence}\AgdaSpace{}%
@@ -146,8 +145,8 @@ then be given the following Agda interpreations.
 We axiomatically include primitive lexical items of \term{love}, an entity
 \term{j} for John, and \term{man} and \term{woman} as nouns, so that we can
 articulate logically interesting facts about them. As our encoding of noun
-phrases takes an arguement, we can define the syntactic notion \term{John} by
-applying an arguement function to \term{j}.
+phrases takes an argument, we can define the syntactic notion \term{John} by
+applying an argument function to \term{j}.
 
 \begin{code}%
 \>[0]\AgdaKeyword{postulate}\<%
@@ -239,8 +238,8 @@ make up the core of any dependently typed language.
 \AgdaBound{x}\AgdaSymbol{)}\<%
 \end{code}
 
-We also notice that we may define the dintransative verb loves two ways, which
-are obtained commuting the NP arguements.
+We also notice that we may define the ditransitive verb \term{loves} two ways,
+which are obtained commuting the NP arguments.
 
 \begin{code}%
 \>[0]\AgdaFunction{loves}\AgdaSpace{}%
@@ -310,12 +309,12 @@ man loves a woman".
 \AgdaComment{-- (ii)}\<%
 \end{code}
 
-The two interpretations of ``loves" which differ as to where the respective
-arguements are applied in the program, manifest in the semantic unambiguity of
+The two interpretations of ``love" which differ as to where the respective
+arguments are applied in the program, manifest in a semantic ambiguity of
 whether there is one or possibly many women are in the context of consideration.
-With Agda's help in normalizing these two types, we can see this ambiguity is
-reflected in whether the outermost quantifier is universal or existential. Note
-he product has been desugared to a non-dependent Σ-type.
+With Agda's help in normalizing these two types, this ambiguity is reflected in
+whether the outermost quantifier is universal or existential. Note the product
+type has been desugared to a non-dependent Σ-type.
 
 \begin{code}%
 \>[0]\AgdaSymbol{(}\AgdaFunction{i}\AgdaSymbol{)}%
@@ -417,12 +416,12 @@ Let's articulate natural language inference to a hypothetical mathematician.
 Assume that John is a person who is human. Knowing that every man
   loves a woman, we can apply this knowledge to John, who is a man, and identity a
 woman that John loves. Specifically, this woman John loves is a person, evidence
-that person is a woman, and evidence that John loves that person.
+that person is a woman, and evidence that John loves that person. {QED}
 
 We also show this argument in Agda, noting that we comment out the more verbose
-but informative information that goes into who a woman John loves really is. We
-explicitly include the data of the proof so as to see how the overly elaborate
-natural language arguement manifests in code. 
+but informative information about who the woman John loves really is. We
+explicitly include the data of the proof commented out so-as to see how the
+overly elaborate natural language argument manifests in code.
 
 \begin{code}%
 \>[0]\AgdaComment{-- (i)}\<%
@@ -486,11 +485,11 @@ natural language arguement manifests in code.
 \>[4]\AgdaComment{-- jonLovesThePerson = proj₂ (proj₂ womanJonLoves)}\<%
 \end{code}
 
-We note this is the first interpretation of love. In the alternative
+We note this is the first interpretation of \term{loves}. In the alternative
 presentation we see that if there is a woman every man loves, that our semantic
-theory interprets her as a person, the evidence that person is a woman, and the
-evidence that every man loves that person. Since every man loves that person,
-John certainly does as well.
+theory interprets her as a person, the evidence they are a woman, and the
+evidence that every man loves them. Since every man loves them, John certainly
+does as well.
 
 \begin{code}%
 \>[0]\AgdaComment{-- (ii)}\<%
@@ -521,8 +520,8 @@ John certainly does as well.
 \end{code}
 
 Finally, we can know that some man loves a woman by virtue of the fact that John
-loves a woman and John is a man. We note that the proofs just articulate the
-data in different order.
+loves a woman and John is a man. We note that the proofs \term{smlw} and
+\term{smlw'} just articulate the data in different order.
 
 \begin{code}%
 \>[0]\AgdaFunction{smlw}\AgdaSpace{}%
@@ -578,7 +577,7 @@ While the Montagovian approach is historically interesting and still incredibly
 significant in linguistic semantics, the interpretation of various parts of
 speech and their means of syntactic combination doesn't always seem to be intuitively reflected in the types. Dependent type theories, or MTTs, which have a more expressive type system, gives us a means of more intuitively encoding the meanings.
 
-This use of a ``fancier" type theory for NL semantics can be viewed as analagous
+This use of a ``fancier" type theory for NL semantics can be viewed as analogous
 to a preference of inductively defined numbers over Von Neumman or Chruch
 encodings. While the latter constructions are interesting and important
 historically, they aren't easy to work with and don't match our intuition.

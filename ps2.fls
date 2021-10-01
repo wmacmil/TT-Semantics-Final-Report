@@ -297,6 +297,16 @@ OUTPUT ps2.ptb
 INPUT ps2.ptb
 OUTPUT ps2.ptb
 INPUT ps2.ptb
+OUTPUT ps2.ptb
+INPUT ps2.ptb
+OUTPUT ps2.ptb
+INPUT ps2.ptb
+OUTPUT ps2.ptb
+INPUT ps2.ptb
+OUTPUT ps2.ptb
+INPUT ps2.ptb
+OUTPUT ps2.ptb
+INPUT ps2.ptb
 INPUT ps2.aux
 INPUT ./ps2.out
 INPUT ./ps2.out

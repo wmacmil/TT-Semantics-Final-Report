@@ -1,4 +1,5 @@
 
+agda --latex MS.lagda
 agda --latex Trial.lagda
 
 latexmk -xelatex ps2.tex
