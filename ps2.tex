@@ -1,0 +1,233 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[ mincrossrefs=999, style=numeric, backend=biber, url=false,
+isbn=false, doi=false, ]{biblatex}
+
+\addbibresource{references.bib}
+
+\usepackage[margin=1in]{geometry} \usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks]{hyperref} \usepackage{enumitem} \usepackage{amsfonts}
+
+\usepackage{unicode-math}
+\usepackage{stmaryrd}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{xspace}
+
+\usepackage{newunicodechar}
+\newunicodechar{ℓ}{\ensuremath{\mathnormal\ell}}
+\newunicodechar{→}{\ensuremath{\mathnormal\rightarrow}}
+\newunicodechar{∈}{\ensuremath{\mathnormal\in}}
+\newunicodechar{λ}{$\lambda$}
+
+\newunicodechar{⌞}{$\llcorner$}
+\newunicodechar{⌟}{$\lrcorner$}
+\newunicodechar{⊚}{$\circledcirc$}
+\newunicodechar{⊤}{$\top$}
+\newunicodechar{⊥}{$\perp$}
+
+
+\NewDocumentCommand{\codeword}{v}{%
+\texttt{\textcolor{gray}{#1}}%
+}
+
+\NewDocumentCommand{\term}{v}{%
+\texttt{\textcolor{blue}{#1}}%
+}
+\NewDocumentCommand{\keyword}{v}{%
+\texttt{\textcolor{orange}{#1}}%
+}
+
+
+
+\usepackage{ stmaryrd }
+\usepackage{agda}
+
+
+% \usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+\hypersetup{ citecolor=RoyalBlue }
+
+\usepackage{fontspec}
+
+\usepackage{titlesec}
+
+\titlespacing\section{0pt}{4pt plus 2pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+% \setmainfont{Linux Libertine} % \setsansfont{Linux Biolinum} % %
+% \setmonofont[Scale=0.85]{PragmataPro Mono Liga}
+
+\begin{document} \pagenumbering{gobble}
+
+\begin{titlepage}
+
+\vspace*{1cm}
+
+\begin{center} \Large Report for Type Theory and Natural Language Semantics\\ 
+
+\vspace{1.5cm}
+
+\large Warrick Scott Macmillan \end{center}
+
+\end{titlepage}
+
+\section{Introduction} 
+
+Since Richard Montague's seminal work investigating the natural language (NL)
+semantics of quantifiers via typed, intentional Higher Order Logic (HOL)
+\cite{Montague1973}, the have been many subsequent iterations. These include:
+
+\begin{itemize}
+\item How to interface various syntactic grammar formalisms with semantic theories 
+\item How to leverage different logics and type theories to model natural
+  lanaguage semantics
+\item How to create a systems that one can use to empirically test 
+  semantic theories on real data
+\end{itemize}
+
+Montague, a student of Alfred Tarski, was working in the \emph{model-theoretic}
+tradition of logic. The \emph{proof-theoretic} tradition of logic, beginning
+with Gentzen \cite{Gentzen1935} and continued by Pragwitz
+\cite{prawitz2006natural}, led to the critical developments of Per Martin-Löf's
+investigations of a constructive foundations of mathematics \cite{ml79}
+\cite{ml1984}. Martin-Löf Type Theory (MLTT) was applied to natural language
+semantics after a discussion between Per and Göran Sundholm about the infamously
+tricky \emph{donkey anaphora} \cite{Sundholm1986}.
+
+Soon thereafter Martin-Löf's student, Aarne Ranta, developed the full theory
+which applied MLTT to understand natural language semantics in a proof theoretic
+tradition, tradition very much inspired by but divergent from Montague
+\cite{ranta1994type}. While Ranta's research focus shifted largely from
+semantics to syntax via his occupation with developing the programming language
+Grammatical Framework (GF) \cite{gf}, his original semantic work greatly
+influenced both linguists and computer scientists. Luo, a type theorist whose
+early work was an iteration of MLTT \cite{luobook} , was one of Ranta's primary
+successors in this endeavor, and along with linguists like Stergios, there has
+been much interest elaborating and expanding Ranta's original seed
+\cite{cnTypes} \cite{luoSterg}. It has been articulated that both
+the proof and model theoretic approaches to logic cohere in Modern Type
+Theoeries (MTTs) and their application in NL semantics \cite{luoMt}.
+
+One of the most central ideas in type theoretic semantics in contrast to those
+in Montagovian tradition, is the ``common nouns as types" maxim \cite{cnTypes},
+whereby the common nouns are actually a universe, instead of functions in the
+classical logic setting. This not only fits a more natural intuition, but also
+makes it convenient for creating an elaborate subtyping mechanism, namely 
+coercive subtyping as developed by Luo \cite{luoCoer} \cite{luo13}.
+
+Despite the obstacles that subtyping presents in that it disallows uniqueness of
+typing, the coercive subtyping approach allows one to retain nice
+meta-properties about the type theory like canonicity, while allowing one to
+construct an ontological hierarchy that captures semantic nuance and facilitates
+computation. Computation using coercive types is just one of the many benefits
+one can leverage from this MTT approach to linguistic semantics.
+
+Proof assistants like Coq and Agda are implementations of different dependent
+type theories. They allow one to interactively build proofs, or programs, which
+are implemented according to their specified behaviors, or types. Because the
+types are identified with theorems by way of the propositions-as-types paradigm,
+the proof assistants are capable of doing functional programming, advanced
+program verification, and constructive mathematics. It is possible to shallowly
+embed semantic encodings from both the Montagovian and MTT traditions in these
+proof assistants as was done in Coq \cite{luoCoq} \cite{fracoq}.
+
+The dependent function type is core to the type theories, and it is possible to
+prove implications by constructing functions. One can therefore do inference
+about the semantic encodings. Inference is one important way of empirically
+testing or observing a semantic theories' success. The FraCas test suite
+\cite{cooper1996using} was designed to capture the inferability of various
+semantic phenomena in a suite of 346 question, each of which has at least one
+premise from which a native speaker would be able to affirm, deny, or defer the
+question if an answer is not knowable under the assumptions.
+
+\section{A Montagovian Example}
+
+We here showcase an example similar to the FraCas test suite to demonstrate the
+way in which one makes inference with Agda. This takes place after having
+interpreted the syntax and constructed semantic formulas in
+Montague's type theory.
+
+\begin{verbatim}
+Premise    : Every man loves a woman.
+Question 1 : Does John love a woman?
+Answer 1 : Yes.
+Question 2 : Does some man love a woman?
+Answer 2   : Yes.
+\end{verbatim}
+
+\subsubsection{Montague}
+
+We can, given a means of constructing trees out of basic syntactic categories,
+assign types to the categories and functions to the rules which obey the rules'
+signatures. One can decide, based on some GF abstract syntax, how these GF
+functions evaluate to formulas in the logic. This then allows one to derive
+meaningful sentences based off the abstract syntax trees, by normalizing the
+lambda terms. The failure of grammatical terms to normalize (enough) is a sign
+of semantic incoherence. This can either be the result of improper typing
+assignments for given lexical categories or a failure to give ``proper" lambda
+terms to given rules or lexical constants. It is also a goal of the theory to
+only admit semantically reasonable ideas, i.e. that there aren't superfluous,
+meaningful sentences which evaluate.
+
+While FraCoq used trees straight generated from the GF Resource Grammar Library
+\cite{ljunglof2012bilingual}, we choose here a simpler syntax taken from
+\cite{nassli}. Our implementation differs from Fracoq in a few ways. First, we
+choose different type assignments for the grammatical categories. Additionally,
+we use Agda instead of Coq.
+
+In the Montagovian tradition one uses a simple type theory. There are two
+basic types, entities and formulas, denoted $e$ and $t$, respectively.
+Everything else is constructed as of higher order functions ending in $t$. The
+entities are meant to represent some notion of objective thing in the world,
+like John, whereas the formulas, only occurring in the codomain of a function,
+may represent utterances such as ``John walks".
+
+Given a suite with nouns (N), verbs (V), noun phrases (NP), verb phrases (VP),
+determiners (Det) and sentences (S) we can then give a Montagovian
+interpretation to accommodate the above FraCas-like example with the following.
+We assign the grammatical categories, and functions over those categories, as an
+abstract syntax in GF:
+
+\begin{verbatim}
+cat
+  S ; N ; NP ; V; VP ; V ; Det ;
+fun
+  sentence : NP -> VP -> S ;
+  verbp : V -> NP -> VP ;
+  ...
+\end{verbatim}
+
+As was done with Coq in \cite{fracoq}, we can embed such a grammar in Agda.
+First, we assign GF categories to Agda sets.
+
+$$\llbracket\_\rrbracket\; {:}\; Cat_{GF} \rightarrow Set_{Agda}$$
+
+For the functions in the abstract syntax, we simply map the interpretation
+functorially with respect to the arrows.
+
+\begin{align*}
+  \llbracket\_\rrbracket\; {:}\; fun_{Cat} &\longrightarrow fun_{Agda}\\
+  A \rightarrow B &\mapsto \llbracket A \rrbracket \rightarrow \llbracket B \rrbracket
+\end{align*}
+
+We then know that the interpretation a given GF function $f {:} X$, must be well
+typed with the Agda semantics, i.e. $\llbracket f \rrbracket {:} \llbracket X
+\rrbracket$. Finally, the way one constructs ASTs, by plugging in functions (or
+leaves) with the correct return type into a given function (or node), and
+evaluating based of applying the function at a node to its leaves in successive
+order. These become Agda function applications:
+
+$$\llbracket f(g) \rrbracket \rightarrow \llbracket f \rrbracket (\llbracket g \rrbracket)$$
+
+\input{latex/MS}
+
+\section{An MTT Example}
+
+\input{latex/Trial}
+
+\section{Conclusion and Conclusion}
+
+\printbibliography
+
+\end{document}

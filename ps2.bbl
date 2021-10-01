@@ -1,0 +1,807 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{fracoq}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=4c7a19f9fca666a1e4615709da59e5b1}{%
+           family={Bernardy},
+           familyi={B\bibinitperiod},
+           given={Jean-Philippe},
+           giveni={J\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=5a0f441b19d49cc8d9a9402555fea64f}{%
+           family={Chatzikyriakidis},
+           familyi={C\bibinitperiod},
+           given={Stergios},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{2bff766a94ba5453c16aa3eae9b8e683}
+      \strng{fullhash}{2bff766a94ba5453c16aa3eae9b8e683}
+      \strng{bibnamehash}{2bff766a94ba5453c16aa3eae9b8e683}
+      \strng{authorbibnamehash}{2bff766a94ba5453c16aa3eae9b8e683}
+      \strng{authornamehash}{2bff766a94ba5453c16aa3eae9b8e683}
+      \strng{authorfullhash}{2bff766a94ba5453c16aa3eae9b8e683}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{{IWCS} 2017 - 12th International Conference on Computational Semantics - Long papers}
+      \field{title}{A Type-Theoretical system for the {F}ra{C}a{S} test suite: Grammatical Framework meets Coq}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://aclanthology.org/W17-6801
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/W17-6801
+      \endverb
+    \endentry
+    \entry{luoSterg}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=5a0f441b19d49cc8d9a9402555fea64f}{%
+           family={Chatzikyriakidis},
+           familyi={C\bibinitperiod},
+           given={Stergios},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f789800bf50172c2c7c05f14da12b08e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhaohui},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=67805f2d67e370eb70f2d14ae7f7e258}{%
+           family={Duchier},
+           familyi={D\bibinitperiod},
+           given={Denys},
+           giveni={D\bibinitperiod}}}%
+        {{hash=006cd5dffed4f877b21c827e67d213d2}{%
+           family={Parmentier},
+           familyi={P\bibinitperiod},
+           given={Yannick},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{e19179f652419ca68b1f75204f5af119}
+      \strng{fullhash}{e19179f652419ca68b1f75204f5af119}
+      \strng{bibnamehash}{e19179f652419ca68b1f75204f5af119}
+      \strng{authorbibnamehash}{e19179f652419ca68b1f75204f5af119}
+      \strng{authornamehash}{e19179f652419ca68b1f75204f5af119}
+      \strng{authorfullhash}{e19179f652419ca68b1f75204f5af119}
+      \strng{editorbibnamehash}{9e5760eef0ed5f3f344a55071ea1dfb1}
+      \strng{editornamehash}{9e5760eef0ed5f3f344a55071ea1dfb1}
+      \strng{editorfullhash}{9e5760eef0ed5f3f344a55071ea1dfb1}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Constraint Solving and Language Processing - 7th International Workshop, {CSLP} 2012, Orl{é}ans, France, September 13-14, 2012, Revised Selected Papers}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{An Account of Natural Language Coordination in Type Theory with Coercive Subtyping}
+      \field{volume}{8114}
+      \field{year}{2012}
+      \field{pages}{31\bibrangedash 51}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1007/978-3-642-41578-4\_3
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-642-41578-4\_3
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-642-41578-4%5C_3
+      \endverb
+    \endentry
+    \entry{luoCoq}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5a0f441b19d49cc8d9a9402555fea64f}{%
+           family={Chatzikyriakidis},
+           familyi={C\bibinitperiod},
+           given={Stergios},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f789800bf50172c2c7c05f14da12b08e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhaohui},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{e19179f652419ca68b1f75204f5af119}
+      \strng{fullhash}{e19179f652419ca68b1f75204f5af119}
+      \strng{bibnamehash}{e19179f652419ca68b1f75204f5af119}
+      \strng{authorbibnamehash}{e19179f652419ca68b1f75204f5af119}
+      \strng{authornamehash}{e19179f652419ca68b1f75204f5af119}
+      \strng{authorfullhash}{e19179f652419ca68b1f75204f5af119}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. Log. Lang. Inf.}
+      \field{number}{4}
+      \field{title}{Natural Language Inference in Coq}
+      \field{volume}{23}
+      \field{year}{2014}
+      \field{pages}{441\bibrangedash 480}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1007/s10849-014-9208-x
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10849-014-9208-x
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10849-014-9208-x
+      \endverb
+    \endentry
+    \entry{cooper1996using}{report}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=212aace821ddc851cbf89d96b81fd4d1}{%
+           family={Cooper},
+           familyi={C\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=599b349f311c9be5cad08c45576ad26f}{%
+           family={Crouch},
+           familyi={C\bibinitperiod},
+           given={Dick},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c940e2039b41d4a240dff0e1dca6cdd1}{%
+           family={Van\bibnamedelima Eijck},
+           familyi={V\bibinitperiod\bibinitdelim E\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b9e5ebd49daa7c879715cadfa79f447d}{%
+           family={Fox},
+           familyi={F\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6a25406b571100220e5e1762b33cb867}{%
+           family={Van\bibnamedelima Genabith},
+           familyi={V\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Johan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e05d8dee628faea403460547816a0722}{%
+           family={Jaspars},
+           familyi={J\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=179ad664ff3be57a74d5f809b819a1d8}{%
+           family={Kamp},
+           familyi={K\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod}}}%
+        {{hash=813e97aa4e4fdd6efada5d239a8c1e80}{%
+           family={Milward},
+           familyi={M\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=68dabe81b30b293187dfa72e0e07d497}{%
+           family={Pinkal},
+           familyi={P\bibinitperiod},
+           given={Manfred},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a18d390058dfaa1a918b1cb85cde6539}{%
+           family={Poesio},
+           familyi={P\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{47b83fd664aa891934e693d7f120819e}
+      \strng{fullhash}{d9ef42ee2459354c67d229247ba5c292}
+      \strng{bibnamehash}{47b83fd664aa891934e693d7f120819e}
+      \strng{authorbibnamehash}{47b83fd664aa891934e693d7f120819e}
+      \strng{authornamehash}{47b83fd664aa891934e693d7f120819e}
+      \strng{authorfullhash}{d9ef42ee2459354c67d229247ba5c292}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Using the framework}
+      \field{type}{techreport}
+      \field{year}{1996}
+    \endentry
+    \entry{Gentzen1935}{article}{}
+      \name{author}{1}{}{%
+        {{hash=df49bcdf1e485294ff125966547769b5}{%
+           family={Gentzen},
+           familyi={G\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{df49bcdf1e485294ff125966547769b5}
+      \strng{fullhash}{df49bcdf1e485294ff125966547769b5}
+      \strng{bibnamehash}{df49bcdf1e485294ff125966547769b5}
+      \strng{authorbibnamehash}{df49bcdf1e485294ff125966547769b5}
+      \strng{authornamehash}{df49bcdf1e485294ff125966547769b5}
+      \strng{authorfullhash}{df49bcdf1e485294ff125966547769b5}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematische Zeitschrift}
+      \field{title}{Untersuchungen über das logische Schließen I}
+      \field{volume}{39}
+      \field{year}{1935}
+      \field{pages}{176\bibrangedash 210}
+      \range{pages}{35}
+      \verb{urlraw}
+      \verb http://eudml.org/doc/168546
+      \endverb
+      \verb{url}
+      \verb http://eudml.org/doc/168546
+      \endverb
+      \keyw{foundations,philosophy,logic}
+    \endentry
+    \entry{ljunglof2012bilingual}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1245d420a6517e23cff7c69931f31755}{%
+           family={Ljungl{ö}f},
+           familyi={L\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=fc93c30f6bbaf41eec9573ba7bb88839}{%
+           family={Siverbo},
+           familyi={S\bibinitperiod},
+           given={Magdalena},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{980e1cd32b10642606aa96c1e977e435}
+      \strng{fullhash}{980e1cd32b10642606aa96c1e977e435}
+      \strng{bibnamehash}{980e1cd32b10642606aa96c1e977e435}
+      \strng{authorbibnamehash}{980e1cd32b10642606aa96c1e977e435}
+      \strng{authornamehash}{980e1cd32b10642606aa96c1e977e435}
+      \strng{authorfullhash}{980e1cd32b10642606aa96c1e977e435}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SLTC 2012}
+      \field{title}{A bilingual treebank for the FraCaS test suite}
+      \field{year}{2012}
+      \field{pages}{53}
+      \range{pages}{1}
+    \endentry
+    \entry{luoCoer}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f789800bf50172c2c7c05f14da12b08e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhaohui},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{fullhash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{bibnamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authorbibnamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authornamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authorfullhash}{f789800bf50172c2c7c05f14da12b08e}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Math. Struct. Comput. Sci.}
+      \field{number}{4}
+      \field{title}{Coercions in a polymorphic type system}
+      \field{volume}{18}
+      \field{year}{2008}
+      \field{pages}{729\bibrangedash 751}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1017/S0960129508006804
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1017/S0960129508006804
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1017/S0960129508006804
+      \endverb
+    \endentry
+    \entry{cnTypes}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=f789800bf50172c2c7c05f14da12b08e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhaohui},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=ef725b83fe97f4be08fe8828ce145ee8}{%
+           family={B{é}chet},
+           familyi={B\bibinitperiod},
+           given={Denis},
+           giveni={D\bibinitperiod}}}%
+        {{hash=360f2824045eeb9c20c2d280081af7ff}{%
+           family={Dikovsky},
+           familyi={D\bibinitperiod},
+           given={Alexander\bibnamedelima Ja.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{fullhash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{bibnamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authorbibnamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authornamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authorfullhash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{editorbibnamehash}{d29645143b2802df7352d41ff66aeab4}
+      \strng{editornamehash}{d29645143b2802df7352d41ff66aeab4}
+      \strng{editorfullhash}{d29645143b2802df7352d41ff66aeab4}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Logical Aspects of Computational Linguistics - 7th International Conference, {LACL} 2012, Nantes, France, July 2-4, 2012. Proceedings}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Common Nouns as Types}
+      \field{volume}{7351}
+      \field{year}{2012}
+      \field{pages}{173\bibrangedash 185}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/978-3-642-31262-5\_12
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-642-31262-5\_12
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-642-31262-5%5C_12
+      \endverb
+    \endentry
+    \entry{luobook}{book}{}
+      \name{author}{1}{}{%
+        {{hash=f789800bf50172c2c7c05f14da12b08e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhaohui},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{fullhash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{bibnamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authorbibnamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authornamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authorfullhash}{f789800bf50172c2c7c05f14da12b08e}
+      \field{extraname}{3}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-19-853835-6}
+      \field{series}{International series of monographs on computer science}
+      \field{title}{Computation and reasoning - a type theory for computer science}
+      \field{volume}{11}
+      \field{year}{1994}
+    \endentry
+    \entry{luoMt}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=f789800bf50172c2c7c05f14da12b08e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhaohui},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{fullhash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{bibnamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authorbibnamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authornamehash}{f789800bf50172c2c7c05f14da12b08e}
+      \strng{authorfullhash}{f789800bf50172c2c7c05f14da12b08e}
+      \field{extraname}{4}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{06}
+      \field{title}{Formal Semantics in Modern Type Theories: Is It Model-Theoretic, Proof-Theoretic, or Both?}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1007/978-3-662-43742-1_14
+      \endverb
+    \endentry
+    \entry{luo13}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f789800bf50172c2c7c05f14da12b08e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhaohui},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=698d669a0466f8e1975a5d9d1a39fe18}{%
+           family={Soloviev},
+           familyi={S\bibinitperiod},
+           given={Sergei},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a28dfb199e5e00926e70ed15238a3c5c}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={Tao},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{c1b582cca02468689908db4482056300}
+      \strng{fullhash}{c1b582cca02468689908db4482056300}
+      \strng{bibnamehash}{c1b582cca02468689908db4482056300}
+      \strng{authorbibnamehash}{c1b582cca02468689908db4482056300}
+      \strng{authornamehash}{c1b582cca02468689908db4482056300}
+      \strng{authorfullhash}{c1b582cca02468689908db4482056300}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Inf. Comput.}
+      \field{title}{Coercive subtyping: Theory and implementation}
+      \field{volume}{223}
+      \field{year}{2013}
+      \field{pages}{18\bibrangedash 42}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/j.ic.2012.10.020
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.ic.2012.10.020
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.ic.2012.10.020
+      \endverb
+    \endentry
+    \entry{ml79}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=617a4cbf763fdc17e84e14c7343bddde}{%
+           family={Martin-Löf},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Per},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=4a6df7694417ffd7958cd11adeccd4ef}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi Jonathan},
+           giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=32c7bb5de89190dfc2c391bb14c5e42d}{%
+           family={Łoś},
+           familyi={Ł\bibinitperiod},
+           given={Jerzy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a5a056b2c7f1c8ddecfd608047a7768a}{%
+           family={Pfeiffer},
+           familyi={P\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ad78a8bed66012064ad2d78475355e10}{%
+           family={Podewski},
+           familyi={P\bibinitperiod},
+           given={Klaus-Peter},
+           giveni={K\bibinithyphendelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{fullhash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{bibnamehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{authorbibnamehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{authornamehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{authorfullhash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{editorbibnamehash}{fc3390c53d47dc3c90969d4cc63ddc15}
+      \strng{editornamehash}{fc3390c53d47dc3c90969d4cc63ddc15}
+      \strng{editorfullhash}{e745b341c20be0fb23d0ddae1a51fde5}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Publisher Summary This chapter discusses that relating constructive mathematics to computer programming seems to be beneficial. Among the benefits to be derived by constructive mathematics from its association with computer programming, one is that you see immediately why you cannot rely upon the law of excluded middle: its uninhibited use would lead to programs that one did not know how to execute. By choosing to program in a formal language for constructive mathematics, like the theory of types, one gets access to the conceptual apparatus of pure mathematics, neglecting those parts that depend critically on the law of excluded middle, whereas even the best high level programming languages so far designed are wholly inadequate as mathematical languages. The virtue of a machine code is that a program written in it can be directly read and executed by the machine. The distinction between low and high level programming languages is of course relative to the available hardware. It may well be possible to turn what is now regarded as a high level programming language into machine code by the invention of new hardware.}
+      \field{booktitle}{Logic, Methodology and Philosophy of Science VI}
+      \field{issn}{0049-237X}
+      \field{series}{Studies in Logic and the Foundations of Mathematics}
+      \field{title}{Constructive Mathematics and Computer Programming}
+      \field{volume}{104}
+      \field{year}{1982}
+      \field{pages}{153\bibrangedash 175}
+      \range{pages}{23}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0049-237X(09)70189-2
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0049237X09701892
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0049237X09701892
+      \endverb
+    \endentry
+    \entry{ml1984}{book}{}
+      \name{author}{1}{}{%
+        {{hash=617a4cbf763fdc17e84e14c7343bddde}{%
+           family={Martin-L{ö}f},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Per},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Bibliopolis}%
+      }
+      \strng{namehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{fullhash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{bibnamehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{authorbibnamehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{authornamehash}{617a4cbf763fdc17e84e14c7343bddde}
+      \strng{authorfullhash}{617a4cbf763fdc17e84e14c7343bddde}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{88-7088-105-9}
+      \field{note}{Notes by Giovanni Sambin of a series of lectures given in Padua, June 1980}
+      \field{series}{Studies in Proof Theory}
+      \field{title}{Intuitionistic type theory}
+      \field{volume}{1}
+      \field{year}{1984}
+      \field{pages}{iv+91}
+      \range{pages}{-1}
+    \endentry
+    \entry{Montague1973}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=7c6ba51ce7aee268ca16ba50bb7f44f2}{%
+           family={Montague},
+           familyi={M\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=e479ded1d684815dc3a6bd451e9a6aea}{%
+           family={Hintikka},
+           familyi={H\bibinitperiod},
+           given={K.\bibnamedelimi J.\bibnamedelimi J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=8463e4ea3a7d7ff0bbb823294678b205}{%
+           family={Moravcsik},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi M.\bibnamedelimi E.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=9016de0aaea4a11f15e82dc2bed9dd1c}{%
+           family={Suppes},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht}%
+      }
+      \list{publisher}{1}{%
+        {Springer Netherlands}%
+      }
+      \strng{namehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{fullhash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{bibnamehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{authorbibnamehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{authornamehash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{authorfullhash}{7c6ba51ce7aee268ca16ba50bb7f44f2}
+      \strng{editorbibnamehash}{dfc4ba5e4f1fc6f7f81b5e177db50010}
+      \strng{editornamehash}{dfc4ba5e4f1fc6f7f81b5e177db50010}
+      \strng{editorfullhash}{dfc4ba5e4f1fc6f7f81b5e177db50010}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The aim of this paper is to present in a rigorous way the syntax and semantics of a certain fragment of a certain dialect of English. For expository purposes the fragment has been made as simple and restricted as it can be while accommodating all the more puzzling cases of quantification and reference with which I am acquainted.1}
+      \field{booktitle}{Approaches to Natural Language: Proceedings of the 1970 Stanford Workshop on Grammar and Semantics}
+      \field{isbn}{978-94-010-2506-5}
+      \field{title}{The Proper Treatment of Quantification in Ordinary English}
+      \field{year}{1973}
+      \field{pages}{221\bibrangedash 242}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1007/978-94-010-2506-5_10
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-94-010-2506-5_10
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-94-010-2506-5_10
+      \endverb
+    \endentry
+    \entry{prawitz2006natural}{book}{}
+      \name{author}{1}{}{%
+        {{hash=a4a0f2f2f8b530284a811487e339aca4}{%
+           family={Prawitz},
+           familyi={P\bibinitperiod},
+           given={Dag},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Courier Dover Publications}%
+      }
+      \strng{namehash}{a4a0f2f2f8b530284a811487e339aca4}
+      \strng{fullhash}{a4a0f2f2f8b530284a811487e339aca4}
+      \strng{bibnamehash}{a4a0f2f2f8b530284a811487e339aca4}
+      \strng{authorbibnamehash}{a4a0f2f2f8b530284a811487e339aca4}
+      \strng{authornamehash}{a4a0f2f2f8b530284a811487e339aca4}
+      \strng{authorfullhash}{a4a0f2f2f8b530284a811487e339aca4}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Natural deduction: A proof-theoretical study}
+      \field{year}{2006}
+    \endentry
+    \entry{ranta1994type}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3ac20553fd2564add973c6e7d55fb05b}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{fullhash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{bibnamehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{authorbibnamehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{authornamehash}{3ac20553fd2564add973c6e7d55fb05b}
+      \strng{authorfullhash}{3ac20553fd2564add973c6e7d55fb05b}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Type Theoretical Grammar}}
+      \field{year}{1994}
+    \endentry
+    \entry{gf}{article}{}
+      \name{author}{1}{}{%
+        {{hash=361be3d70ca46f2a3a6e960683cea9f4}{%
+           family={Ranta},
+           familyi={R\bibinitperiod},
+           given={Aarne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{fullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{bibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorbibnamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authornamehash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \strng{authorfullhash}{361be3d70ca46f2a3a6e960683cea9f4}
+      \field{extraname}{2}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Grammatical Framework (GF) is a special-purpose functional language for defining grammars. It uses a Logical Framework (LF) for a description of abstract syntax, and adds to this a notation for defining concrete syntax. GF grammars themselves are purely declarative, but can be used both for linearizing syntax trees and parsing strings. GF can describe both formal and natural languages. The key notion of this description is a grammatical object, which is not just a string, but a record that contains all information on inflection and inherent grammatical features such as number and gender in natural languages, or precedence in formal languages. Grammatical objects have a type system, which helps to eliminate run-time errors in language processing. In the same way as a LF, GF uses dependent types in abstract syntax to express semantic conditions, such as well-typedness and proof obligations. Multilingual grammars, where one abstract syntax has many parallel concrete syntaxes, can be used for reliable and meaning-preserving translation. They can also be used in authoring systems, where syntax trees are constructed in an interactive editor similar to proof editors based on LF. While being edited, the trees can simultaneously be viewed in different languages. This paper starts with a gradual introduction to GF, going through a sequence of simpler formalisms till the full power is reached. The introduction is followed by a systematic presentation of the GF formalism and outlines of the main algorithms: partial evaluation and parser generation. The paper concludes by brief discussions of the Haskell implementation of GF, existing applications, and related work.}
+      \field{issn}{0956-7968}
+      \field{journaltitle}{J. Funct. Program.}
+      \field{month}{3}
+      \field{number}{2}
+      \field{title}{Grammatical Framework}
+      \field{volume}{14}
+      \field{year}{2004}
+      \field{pages}{145\bibrangedash 189}
+      \range{pages}{45}
+      \verb{doi}
+      \verb 10.1017/S0956796803004738
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1017/S0956796803004738
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1017/S0956796803004738
+      \endverb
+    \endentry
+    \entry{Sundholm1986}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=c8d81b3ecb806201b6e72ae6d60d3948}{%
+           family={Sundholm},
+           familyi={S\bibinitperiod},
+           given={G{ö}ran},
+           giveni={G\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=46875eeb0d134277e7ac29531d9f8ff2}{%
+           family={Gabbay},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bc5417056bf605cb96cbd8a0a9aee245}{%
+           family={Guenthner},
+           familyi={G\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht}%
+      }
+      \list{publisher}{1}{%
+        {Springer Netherlands}%
+      }
+      \strng{namehash}{c8d81b3ecb806201b6e72ae6d60d3948}
+      \strng{fullhash}{c8d81b3ecb806201b6e72ae6d60d3948}
+      \strng{bibnamehash}{c8d81b3ecb806201b6e72ae6d60d3948}
+      \strng{authorbibnamehash}{c8d81b3ecb806201b6e72ae6d60d3948}
+      \strng{authornamehash}{c8d81b3ecb806201b6e72ae6d60d3948}
+      \strng{authorfullhash}{c8d81b3ecb806201b6e72ae6d60d3948}
+      \strng{editorbibnamehash}{4da02c600868f30eec9d216e71218d24}
+      \strng{editornamehash}{4da02c600868f30eec9d216e71218d24}
+      \strng{editorfullhash}{4da02c600868f30eec9d216e71218d24}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The meaning of a sentence determines how the truth of the proposition expressed by the sentence may be proved and hence one would expect proof theory to be influenced by meaning-theoretical considerations. In the present Chapter we consider a proposal that also reverses the above priorities and determines meaning in terms of proof. The proposal originates in the criticism that Michael Dummett has voiced against a realist, truth-theoretical, conception of meaning and has been developed largely by him and Dag Prawitz, whose normalization procedures in technical proof theory constitute the main technical basis of the proposal.}
+      \field{booktitle}{Handbook of Philosophical Logic: Volume III: Alternatives in Classical Logic}
+      \field{isbn}{978-94-009-5203-4}
+      \field{title}{Proof Theory and Meaning}
+      \field{year}{1986}
+      \field{pages}{471\bibrangedash 506}
+      \range{pages}{36}
+      \verb{doi}
+      \verb 10.1007/978-94-009-5203-4_8
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-94-009-5203-4_8
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-94-009-5203-4_8
+      \endverb
+    \endentry
+    \entry{nassli}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=88183b946cc5f0e8c96b2e66e1c74a7e}{%
+           family={Unknown},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {NASSLLI}%
+      }
+      \strng{namehash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{fullhash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{bibnamehash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{authorbibnamehash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{authornamehash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{authorfullhash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \field{sortinit}{U}
+      \field{sortinithash}{77a6935510e008adcf5b555e7b4f0711}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://pdfs.semanticscholar.org/f94b/268c1c91dd1de22cf978a7ea03f8860cbe9d.pdf}}
+      \field{title}{{Course 5: Montague’s approach to semantics}}
+      \field{year}{2014}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

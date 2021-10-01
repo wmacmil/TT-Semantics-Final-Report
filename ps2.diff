@@ -1,0 +1,313 @@
+--- ps2.tex.orig	2021-02-10 16:24:35.641416145 +0100
++++ ps2.tex	2021-02-10 17:04:33.585380626 +0100
+@@ -39,27 +39,27 @@
+ I have been working my whole life for the opportunity to apply for this
+ position. I have applied to many various positions in my day, but none so far with
+ the certainty and confidence that I have when writing this here right now. I
+-make this bold claim because it feels right ; that is, Sweden feels right and
+-Gothenburg feels right.  The mathematical, type theoretic, and logical research
+-- more importantly the community from which these various ideas emanate, to me,
++make this bold claim because it feels right; that is, Sweden feels right and
++Gothenburg feels right.  The mathematical, type-theoretic, and logical research
++--- more importantly the community from which these various ideas emanate, to me,
+ this feels right. It's not only a feeling that I have which is compelling me to
+-apply for this position - It's a belief.  
++apply for this position --- it's a belief.  
+ 
+ It's a belief that I'm capable of learning the many technically nuanced,
+ challenging, and beautiful subjects which underlie Homotopy Type Theory (HoTT)
+ \cite{hottbook}, initiated over ten years ago when Vladimir Voevodsky sent
+ an unassuming email to Bob Harper, and soon thereafter gave a seminar at CMU
+-where he introduced univalence \cite{voevodsky2014equivalence}. It's importance
+-was evident, and it's various progressions led to Cubical Models of Type Theory
++where he introduced univalence \cite{voevodsky2014equivalence}. Its importance
++was evident, and its various progressions led to cubical models of type theory
+ \cite{bezem2017univalence} \cite{cohen:hal-01378906} which have shed a new
+ light on elemental issues such as the fundamental differences and distinctions
+-between Intensional and Extensional type theories, how one implements various
+-topological concepts in—and therefore designs—a new proof assistant \cite
++between intensional and extensional type theories, how one implements various
++topological concepts in --- and therefore designs --- a new proof assistant \cite
+ {cubicalAgda}, and perhaps most mysteriously, why Per Martin-Löf's meaning
+ explanations are of such primitive importance in the foundations of
+ mathematics. While my understanding of these various topics is growing, I now
+ know enough to believe that they are indeed a discovery akin to Euclid's
+-Elements, Newton's Laws, and Noether's algebraic approach to topology.  It's a
++Elements, Newton's laws, and Noether's algebraic approach to topology.  It's a
+ belief in Bob Harper's doctrine of computational trinitarianism which has led
+ me to Sweden to study these subjects.
+ 
+@@ -67,44 +67,44 @@
+ possible paths. I began my studies at Emory University, more compelled by the
+ applied sciences, culminating with Bachelors degrees in Mathematics, Physics,
+ and a minor in Chemistry.  While at Emory, I became convinced that science was
+-itself dependent upon mathematical advances.  Emory didn't any logic courses,
++itself dependent upon mathematical advances.  Emory didn't have any logic courses,
+ so coming to terms with proofs was only possible through direct experience, and
+-I was convinced that applied mathematics more in line with how my brain was
++I was convinced that applied mathematics was more in line with how my brain was
+ wired. 
+ 
+ In 2015 I worked at a Veterans Hospital in San Francisco at the Cardiac
+-Biomechanics Laboratory working with a team consisting of Heart Surgeons,
+-Biomedical Engineers, and Biologists. Using Finite Element software to model
++Biomechanics Laboratory working with a team consisting of heart surgeons,
++biomedical engineers, and biologists. Using finite-element software to model
+ human hearts gave me the practical experience, and frustrations, of being an
+-end user of industrial grade software.  This left me with a desire to always be
++end user of industrial-grade software.  This left me with a desire to always be
+ in interdisciplinary environments, as I believe the breadth of ideas, as well
+ as nuance of perspective from people of different backgrounds, provides
+ opportunities of the most stimulating research. 
+ 
+ My experience here in Gothenburg studying computational linguistics has
+-further reinforced this, allowing me to take classes in topics like Natural
+-Language Semantics, Category Theory, and Modal Logic.  More importantly, being
++further reinforced this, allowing me to take classes in topics like natural
++language semantics, category theory, and modal logic.  More importantly, being
+ able to discuss ideas and ask questions of people with varied interests like
+ Peter Dybjer, Stergios Chatzikyriakidis, Fredrik Engström, their students, and 
+ so many others has shown me how much Gothenburg epitomizes this
+-interdisciplinary universe. Engaging with Agda in particular has taught me that
++interdisciplinary universe. Engaging with Agda \cite{Agda} in particular has taught me that
+ applied mathematics could extend beyond the scope of numerical computation and
+ industrial software development.  My preconceptions of the boundary between
+ pure and applied mathematics has been dismantled: indeed, I found it ironic and
+-fascinating that, when I met with Per Martin-Löf, he considers himself
++fascinating when I met with Per Martin-Löf that he considers himself
+ an applied mathematician!  My path through life so far has given me insights
+ and experiences that will allow me to contribute unique qualities and ideas to
+-the Type Theory community,  and this is particularly perceptible in my
++the type theory community,  and this is particularly perceptible in my
+ immersion in the Burning Man culture of my home, Nevada.
+ 
+ Burning Man gave me a sense of inspiration, community, and a means of
+ articulation I had never yet before experienced.  These experiences culminated
+ in my application for an art grant through the Burning Man organization, which
+-I was awarded to build an installation titled The Library of Babel - a physical
++I was awarded to build an installation titled ``The Library of Babel'' --- a physical
+ manifestation of Jorge Borges hypothetical universe containing all books with
+ all combinations of letters. This project gave me the confidence of a full
+-stack maker - with many skills equally relevant to success in academia :
+-organizational thinking, grant-writing, and collaboration among others. 
++stack maker --- with many skills equally relevant to success in academia:
++organizational thinking, grant-writing, and collaboration, among others. 
+ 
+ I had the opportunity to, at the age of 23, be a catalyst for an incredibly
+ elaborate project. I personally learned architecture, construction, logistical,
+@@ -115,21 +115,21 @@
+ creative passion, but my commitment to and skillful engagement in
+ collaborative, interdisciplinary, and open source projects. These values are
+ also reflected in my recent endeavors over the past year in Gothenburg, taking
+-on an organizational role in the Initial Types Club, and foresee a future here
++on an organizational role in the Initial Types Club \cite{ITC}, and foresee a future here
+ as further refining these collaborative aspirations.
+ 
+ \section{Thesis Work}
+ 
+-My current work, which focuses on translation between Natural and Computer
+-Language proofs, is providing me a solid foundation for these positions under
+-Thierry and Andreas.  In GF, I'm specifying a parser for a large fragment of
++My current work, which focuses on translation between natural and computer
++language proofs, is providing me a solid foundation for these positions under
++Thierry and Andreas.  In Grammatical Framework (GF) \cite{GF}, I'm specifying a parser for a large fragment of
+ Agda, but with an extended syntax that allows for concrete implementation of
+ various natural language phenomena.  A proof of concept will be a custom HoTT
+-Library I've written, just under 1000 lines, which attempts to recapitulate
+-many of the proofs in chapter 2 of the HoTT book, formalized to match the
++library I've written, just under 1000 lines, which attempts to recapitulate
++many of the proofs in the second chapter of the HoTT book, formalized to match the
+ book's syntax as close as possible. While the ongoing work which I anticipate
+ to finish this spring, I have had many insights so far in response to the many
+-questions I've been grappling with. The questions include :
++questions I've been grappling with. The questions include:
+ 
+ \begin{itemize}[noitemsep]
+ 
+@@ -139,49 +139,49 @@
+ working mathematicians?  
+ 
+ \item Will foundational programs like HoTT ever appeal to, and overtake
+-classical mathematicians reliance on ZFC? Conversely, is it possible, or
++classical mathematicians' reliance on set theory? Conversely, is it possible, or
+ feasible, to reformulate much of classical mathematics in a constructive (and
+-type theoretic setting)?
++type-theoretic setting)?
+ 
+ \end{itemize}
+ 
+ During the past twelve months, in order to get some perspectives on what
+ it will take to answer these questions, I've undertaken a significant
+ amount of independent study of many tools, theories, and topics. Some
+-examples are :
++examples are:
+ 
+ \begin{itemize}[noitemsep]
+ 
+-\item learning Coq by working through much of the Software Foundations book
++\item learning Coq by working through much of the Software Foundations series \cite{SoftwareFoundations},
+ 
+-\item becoming familiar with Logical Frameworks generally in an attempt to
+-further understand GF, and playing with Twelf along the way
++\item becoming familiar with logical frameworks generally in an attempt to
++further understand GF, and playing with Twelf \cite{Twelf} along the way, and
+ 
+-\item learning about Controlled Natural Languages (CNLs), and becoming familiar
+-with Tom Hales Formal Abstracts project.  Asking how a GF approach to CNLs,
+-which can parametrically vary the concrete manifestations of a given formalism
+-has been particularly intriguing. Additionally, I've tinkered with Lean to get
++\item learning about controlled natural languages (CNLs), and becoming familiar
++with Tom Hales' Formal Abstracts project.  Asking how a GF approach to CNLs,
++which can parametrically vary the concrete manifestations of a given formalism,
++has been particularly intriguing. Additionally, I've tinkered with Lean \cite{Lean} to get
+ a handle on proof assistants more targeted at working mathematicians, providing
+ contrasting perspectives on Agda and HoTT.
+ 
+ \end{itemize}
+ 
+ One of the most fruitful developments over this past year has been an extended
+-study of Category Theory, which I have undertaken with an external mentor,
++study of category theory, which I have undertaken with an external mentor,
+ Joseph Hirsch, through expository discussions on various topics which have
+-included the Yoneda Lemma, Adjunctions, Lawvere Theories, and higher
++included the Yoneda lemma, adjunctions, Lawvere theories, and higher
+ categories. These have not only given me a thirst to continue the deep dive
+ into category theory, and categorical logic in particular, but a taste of the
+-collaborative thinking I cherish.  For example, while explaining GF AST's,
+-Joseph observed that in the CFG derivations, the "plugging in" trees based off
++collaborative thinking I cherish.  For example, while explaining GF abstract syntax trees (ASTs),
++Joseph observed that in the context-free grammar (CFG) derivations, the ``plugging-in'' trees based off
+ the category of their nodes is actually just a composition taking place in a
+-Colored Operad - leading us to postulate that there's an adjunction between the
++colored operad --- leading us to postulate that there's an adjunction between the
+ concrete and abstract sides of GF.  While these details remain to be worked out
+-(and in part already have been) the experience of collaboratively discovering
++(and in part already have been), the experience of collaboratively discovering
+ two different perspectives on the same concrete mathematical object was
+ exhilarating. It reiterated the knowledge that many great mathematical ideas
+ don't just come from isolated and intense thought, but dialogue and discussion.
+-This is reflected in the Harper's Trinitarian doctrine, and is continuing to
++This is reflected in Harper's trinitarian doctrine, and is continuing to
+ feed my desire to keep up this learning during my PhD. Categorical logic is the
+ next subject which I really hope to sink my teeth into.
+ 
+@@ -189,82 +189,82 @@
+ \section{Research Proposal}
+ 
+ I propose this PhD thesis could explore a detailed theoretical account and
+-provide a practical exploration for Linear Homotopy Typ Theory (LHoTT)
+-\cite{schreiber2014quantization} and/or ahypothetical Linear Cubical Type
++provide a practical exploration for Linear Homotopy Type Theory (LHoTT)
++\cite{schreiber2014quantization} and/or a hypothetical Linear Cubical Type
+ Theory (LCTT). The first goal of this thesis proposal would therefore be to ask
+ which categorical models provide a suitable semantics for LHoTT with a
+-primitive notions of path out of n-cubes. Secondarily, if successful, it would
++primitive notion of path out of n-cubes. Secondarily, if successful, it would
+ be my goal to implement a Linear Cubical Agda.
+ 
+-Much Type Theory research has centered around dependent types and substructural
+-, particularly linear, type systems \cite{neelBenton}. Both have wide reaching practical and
+-theoritical implications, and investigations about their mutual integration is
++Much type theory research has centered around dependent types and substructural,
++particularly linear, type systems \cite{neelBenton}. Both have wide-reaching practical and
++theoretical implications, and investigations about their mutual integration is
+ of interest, with success arising from the adjunction between their respective
+-models in Monoidal Closed Categories and Cartesian Closed Categories \cite{mellies:hal-00154229} \cite{vákár2015syntax} . It is
++models in monoidal closed categories and Cartesian closed categories \cite{mellies:hal-00154229} \cite{vákár2015syntax}. It is
+ natural to ask how to extend this work with higher-categorical semantics.
+ 
+-The main issue in Linear Depednent type theories to resolve, how to treat a
++The main issue in linear dependent type theories to resolve, how to treat
+ types depenent on linear variables, has no established answer, with multiple
+ interpreations on the table \cite{neelBenton} \cite{luoLinear}. Therefore, the
+-inclusion of linear types to CTTs offers many directions of investigation. It
+-is claimed that "Indexed monoidal (∞,1)-categories are conjectured to be the
+-categorical semantics of linear homotopy type theory." and that "twisted
+-generalized cohomology theory is conjecturally ∞-categorical semantics of
+-linear homotopy type theory" \cite{indexedInf} . Partiularly of interest would be how
++inclusion of linear types to cubical type theories (CTTs) offers many directions of investigation. It
++is claimed that ``indexed monoidal ($\infty$,1)-categories are conjectured to be the
++categorical semantics of LHoTT'' and that ``twisted
++generalized cohomology theory is conjecturally $\infty$-categorical semantics of
++LHoTT'' \cite{indexedInf}. Particularly of interest would be how
+ the linearity condition interacts with equality types, as the meaning of a
+ vanilla dependent linear type is already contingent upon how a given type
+ theory treats this.  Another approach to answering this
+-question of what a LCTT should look like, would be to ask what applications a
+-type theory would be suitable for solving. 
++question of what an LCTT should look like, would be to ask what applications an
++LCTT would be suitable for solving. 
+ 
+-Linear types have immense applications : type theoretic approaches to
+-concurrency \cite{Caires2016LinearLP} , complexity \cite{HOFMANN200357}
+-\cite{5970211} , security \cite{gaboardiP}, and quantum languages
++Linear types have immense applications: type-theoretic approaches to
++concurrency \cite{Caires2016LinearLP}, complexity \cite{HOFMANN200357}
++\cite{5970211}, security \cite{gaboardiP}, and quantum languages
+ \cite{selingerQuantum} have all served as use cases for various linear type systems.
+ It may therefore be worthwhile to pursue some of these in an LCTT. One
+ interesting application of LCTT would be to examine program behavior from the
+-relational reasoning perspective \cite{marco2019} \cite{marcoRel} . While
++relational-reasoning perspective \cite{marco2019} \cite{marcoRel}. While
+ parametricity results have been extended to CTT \cite{cavallo2021internal}, new
+-applications of HITs in Cubical Agda have allowed alternative characterizations
++applications of higher inductive types (HITs) in Cubical Agda have allowed alternative characterizations
+ of relating data structures for which classical parametricty metatheorems were
+ previously used \cite{angiuli2020internalizing}. LCTT could be used to compare
+ not just implementations of interfaces, but other relatable, but not
+-intrinsically isomorphic properties, for instance, a programs execution
++intrinsically isomorphic properties, for instance, a program's execution
+ behavior on two related inputs.
+ 
+ The view of linear logic as a logic for reasoning about resources
+-\cite{sep-logic-linear} or even a "logic of feasible computation"
++\cite{sep-logic-linear} or even a ``logic of feasible computation''
+ \cite{neelComment}, highlight linearity's promise as a regenerating force in
+ constructive mathematics \cite{shulman2018linear}.  LCTT should be viewed as a
+-possible means of reconciling what has been labeled as "The Great Rift" between
+-the Americans'  combinatorial approach and the Europeans logical approach to
++possible means of reconciling what has been labeled as ``The Great Rift'' between
++the Americans'  combinatorial approach and the Europeans' logical approach to
+ the theory of computation \cite{harperBeauty}. While there are many branches of
+-complexity in PL research, with linear and substructural type systems being
+-just one branch, a well developed theory of LCTT could be the most well suited
+-to a deep analysis of the complexity of proof, especially in the ∞-groupoids
++complexity in programming-language research, with linear and substructural type systems being
++just one branch, a well-developed theory of LCTT could be the most well-suited
++to a deep analysis of the complexity of proof, especially in the $\infty$-groupoids
+ interpretation of types.
+ 
+-The failure of cubical agda to normalize the "Brunerie number"
++The failure of Cubical Agda to normalize the ``Brunerie number''
+ \cite{brunerie2016homotopy} and other standard topological results
+ \cite{andersCohomology} is of central concern for the future of CTT,
+-particularly as to how the Type Theory community grapples with converting
++particularly as to how the type theory community grapples with converting
+ mainstream mathematicians who aren't yet interested in this new foundation.
+-While Anders has suggested that it's more of an engineering than a complexity
+-problem, there is speculation that Type Theories built to handle complexity
++While Anders Mörtberg has suggested that it's more of an engineering than a complexity
++problem, there is speculation that type theories built to handle complexity
+ \cite{niu2020costaware} may also lead to insights in this direction. I posit we
+-have only just scratched the tip of the icerberg, as far as feasibility of
++have only just scratched the tip of the iceberg, as far as feasibility of
+ mathematics in proof assitants, and that as the field matures, LCTT offers one
+ possible proper theoretical treatment of this. Indeed, recent work on Resource
+-Aware ML \cite{raml} has shown that there can be practical implementation of
++Aware ML \cite{raml} has shown that there can be practical implementations of
+ cost analysis in functional programming languages, and although their framework
+ is affine, I posit Resource Aware Linear Cubical Agda may allow for dealing
+-with intractiblility of computation, long type-checking times, and other issues
++with intractibility of computation, long type-checking times, and other issues
+ certain to arise as Agda matures.  
+ 
+-From a purely philosophical perspective, there are integers who are so large
++From a purely philosophical perspective, there are integers which are so large
+ they can't possibly be stored in a computer, and even if there were computers
+-with enough memory to store them, would not be feasible to realistically "know"
+-due to quantum effects, gamma radation, and other physical sources of
++with enough memory to store them, would not be feasible to realistically ``know''
++due to quantum effects, gamma radiation, and other physical sources of
+ improbable but recurrent bugs. How does the constructive type theorist, with
+ her absolute stance on evidence reconcile notions of every natural number when
+ there are phsyical limitations on the numbers we can construct? I believe this

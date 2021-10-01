@@ -1,0 +1,594 @@
+\begin{code}[hide]%
+\>[0]\AgdaKeyword{module}%
+\>[0I]\AgdaModule{MS}\<%
+\\
+\>[0I][@{}l@{\AgdaIndent{0}}]%
+\>[10]\AgdaSymbol{(}\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Data.Product}\AgdaSpace{}%
+\AgdaKeyword{using}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaRecord{Σ}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}×\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{\AgdaUnderscore{},\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaField{proj₁}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaField{proj₂}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaFunction{∃}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaFunction{Σ-syntax}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaFunction{∃-syntax}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaComment{-- example from}\<%
+\\
+\>[0]\AgdaComment{-- https://pdfs.semanticscholar.org/f94b/268c1c91dd1de22cf978a7ea03f8860cbe9d.pdf}\<%
+\end{code}
+
+We assign Agda types to the categories, knowing that entites are postulated as a
+type.
+
+\begin{code}%
+\>[0]\AgdaFunction{t}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+\>[0]\AgdaFunction{S}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\\
+\>[0]\AgdaFunction{NP}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{t}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\\
+\>[0]\AgdaFunction{VP}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{NP}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\\
+\>[0]\AgdaFunction{V}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{NP}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{NP}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\\
+\>[0]\AgdaFunction{Det}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{t}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{t}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\\
+\>[0]\AgdaFunction{N}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\end{code}
+
+Agda's equality symbol can be seen as the semantic interpretation,
+$\llbracket_\rrbracket$, of our grammar's categories, whereby we are here
+working with a shallow embedding. One could instead elect to define both the GF
+embedding as a record and Montague's intentional type theory as an inductive
+dataype, whereby the semantics could then be given explictly. This degree of
+formality is not necessary for our simple examples, but doing so would allow one
+to prove metaproperties about the GF embedding, and should certainly be
+investigated.
+The two GF functions for forming sentences and verb phrases can
+then be given the following Agda interpreations.
+
+\begin{code}%
+\>[0]\AgdaFunction{sentence}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{NP}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{VP}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{S}\<%
+\\
+\>[0]\AgdaFunction{sentence}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSpace{}%
+\AgdaBound{V}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{V}\AgdaSpace{}%
+\AgdaBound{S}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaFunction{verbp}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{V}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{NP}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{VP}\<%
+\\
+\>[0]\AgdaFunction{verbp}\AgdaSpace{}%
+\AgdaBound{V}\AgdaSpace{}%
+\AgdaBound{O}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{V}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSpace{}%
+\AgdaBound{O}\<%
+\end{code}
+
+\begin{code}[hide]%
+\>[0]\AgdaFunction{nounp}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{Det}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{N}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{NP}\<%
+\\
+\>[0]\AgdaFunction{nounp}\AgdaSpace{}%
+\AgdaBound{D}\AgdaSpace{}%
+\AgdaBound{N}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{D}\AgdaSpace{}%
+\AgdaBound{N}\<%
+\end{code}
+
+We axiomatically include primitive lexical items of \term{love}, an entity
+\term{j} for John, and \term{man} and \term{woman} as nouns, so that we can
+articulate logically interesting facts about them. As our encoding of noun
+phrases takes an arguement, we can define the syntactic notion \term{John} by
+applying an arguement function to \term{j}.
+
+\begin{code}%
+\>[0]\AgdaKeyword{postulate}\<%
+\\
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaPostulate{love}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\\
+%
+\>[2]\AgdaPostulate{j}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{e}\<%
+\\
+%
+\>[2]\AgdaPostulate{man}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{N}\<%
+\\
+%
+\>[2]\AgdaPostulate{woman}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{N}\<%
+\\
+%
+\>[2]\AgdaPostulate{johnMan}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPostulate{man}\AgdaSpace{}%
+\AgdaPostulate{j}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaFunction{John}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{NP}\<%
+\\
+\>[0]\AgdaFunction{John}\AgdaSpace{}%
+\AgdaBound{P}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{P}\AgdaSpace{}%
+\AgdaPostulate{j}\<%
+\end{code}
+
+We define our quantifiers using the Agda's dependent $\Pi$ and $\Sigma$ which
+make up the core of any dependently typed language.
+
+\begin{code}%
+\>[0]\AgdaFunction{Every}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{Det}\<%
+\\
+\>[0]\AgdaFunction{Every}\AgdaSpace{}%
+\AgdaBound{P}\AgdaSpace{}%
+\AgdaBound{Q}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{P}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{Q}\AgdaSpace{}%
+\AgdaBound{x}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaFunction{A}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{Det}\<%
+\\
+\>[0]\AgdaFunction{A}\AgdaSpace{}%
+\AgdaBound{cn}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{Σ[}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaFunction{∈}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaFunction{]}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{cn}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{×}}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSymbol{)}\<%
+\end{code}
+
+We also notice that we may define the dintransative verb loves two ways, which
+are obtained commuting the NP arguements.
+
+\begin{code}%
+\>[0]\AgdaFunction{loves}\AgdaSpace{}%
+\AgdaFunction{loves'}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{V}\<%
+\\
+\>[0]\AgdaFunction{loves}\AgdaSpace{}%
+\AgdaBound{O}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{O}\AgdaSpace{}%
+\AgdaSymbol{(λ}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSpace{}%
+\AgdaSymbol{λ}\AgdaSpace{}%
+\AgdaBound{y}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPostulate{love}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaBound{y}\AgdaSymbol{)}%
+\>[42]\AgdaComment{-- (i)}\<%
+\\
+\>[0]\AgdaFunction{loves'}\AgdaSpace{}%
+\AgdaBound{O}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{S}\AgdaSpace{}%
+\AgdaSymbol{(λ}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{O}\AgdaSpace{}%
+\AgdaSymbol{λ}\AgdaSpace{}%
+\AgdaBound{y}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPostulate{love}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaBound{y}\AgdaSymbol{)}%
+\>[42]\AgdaComment{-- (ii)}\<%
+\end{code}
+
+We can then observe two different semantic interpretations of the phrase ``every
+man loves a woman".
+
+\begin{code}%
+\>[0]\AgdaFunction{everyManLovesAWoman}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{sentence}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{Every}\AgdaSpace{}%
+\AgdaPostulate{man}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{verbp}\AgdaSpace{}%
+\AgdaFunction{loves}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{A}\AgdaSpace{}%
+\AgdaPostulate{woman}\AgdaSymbol{))}%
+\>[69]\AgdaComment{-- (i)}\<%
+\\
+\>[0]\AgdaFunction{everyManLovesAWoman'}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{sentence}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{Every}\AgdaSpace{}%
+\AgdaPostulate{man}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{verbp}\AgdaSpace{}%
+\AgdaFunction{loves'}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{A}\AgdaSpace{}%
+\AgdaPostulate{woman}\AgdaSymbol{))}\AgdaSpace{}%
+\AgdaComment{-- (ii)}\<%
+\end{code}
+
+The two interpretations of ``loves" which differ as to where the respective
+arguements are applied in the program, manifest in the semantic unambiguity of
+whether there is one or possibly many women are in the context of consideration.
+With Agda's help in normalizing these two types, we can see this ambiguity is
+reflected in whether the outermost quantifier is universal or existential. Note
+he product has been desugared to a non-dependent Σ-type.
+
+\begin{code}%
+\>[0]\AgdaSymbol{(}\AgdaFunction{i}\AgdaSymbol{)}%
+\>[5]\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPostulate{man}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Σ}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{(λ}\AgdaSpace{}%
+\AgdaBound{x₁}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Σ}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaPostulate{woman}\AgdaSpace{}%
+\AgdaBound{x₁}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(λ}\AgdaSpace{}%
+\AgdaBound{x₂}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPostulate{love}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaBound{x₁}\AgdaSymbol{))}\<%
+\\
+\>[0]\AgdaSymbol{(}\AgdaFunction{ii}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaRecord{Σ}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{(λ}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Σ}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaPostulate{woman}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(λ}\AgdaSpace{}%
+\AgdaBound{x₁}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{x₂}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPostulate{man}\AgdaSpace{}%
+\AgdaBound{x₂}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPostulate{love}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaBound{x₂}\AgdaSymbol{))}\<%
+\end{code}
+\begin{code}[hide]%
+\>[0]\AgdaFunction{someManLovesAWoman}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{sentence}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{A}\AgdaSpace{}%
+\AgdaPostulate{man}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{verbp}\AgdaSpace{}%
+\AgdaFunction{loves}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{A}\AgdaSpace{}%
+\AgdaPostulate{woman}\AgdaSymbol{))}\<%
+\\
+\>[0]\AgdaFunction{someManLovesAWoman'}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{sentence}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{A}\AgdaSpace{}%
+\AgdaPostulate{man}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{verbp}\AgdaSpace{}%
+\AgdaFunction{loves'}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{A}\AgdaSpace{}%
+\AgdaPostulate{woman}\AgdaSymbol{))}\<%
+\\
+\>[0]\AgdaFunction{johnLovesAWoman}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{sentence}\AgdaSpace{}%
+\AgdaFunction{John}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{verbp}\AgdaSpace{}%
+\AgdaFunction{loves}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{A}\AgdaSpace{}%
+\AgdaPostulate{woman}\AgdaSymbol{))}\<%
+\\
+\>[0]\AgdaFunction{johnLovesAWoman'}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{sentence}\AgdaSpace{}%
+\AgdaFunction{John}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{verbp}\AgdaSpace{}%
+\AgdaFunction{loves'}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaFunction{A}\AgdaSpace{}%
+\AgdaPostulate{woman}\AgdaSymbol{))}\<%
+\end{code}
+
+%\paragraph{Agda Fracas Example}
+
+Let's articulate natural language inference to a hypothetical mathematician.
+
+\textbf{Theorem}:
+  If every man loves a woman, then John loves a woman.
+
+\textbf{Proof}:
+Assume that John is a person who is human. Knowing that every man
+  loves a woman, we can apply this knowledge to John, who is a man, and identity a
+woman that John loves. Specifically, this woman John loves is a person, evidence
+that person is a woman, and evidence that John loves that person.
+
+We also show this argument in Agda, noting that we comment out the more verbose
+but informative information that goes into who a woman John loves really is. We
+explicitly include the data of the proof so as to see how the overly elaborate
+natural language arguement manifests in code. 
+
+\begin{code}%
+\>[0]\AgdaComment{-- (i)}\<%
+\\
+\>[0]\AgdaFunction{jlaw}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{everyManLovesAWoman}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{johnLovesAWoman}\<%
+\\
+\>[0]\AgdaFunction{jlaw}\AgdaSpace{}%
+\AgdaBound{emlaw}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{womanJonLoves}\AgdaSpace{}%
+\AgdaComment{-- thePerson ,  thePersonIsWoman  , jonLovesThePerson}\<%
+\\
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaFunction{womanJonLoves}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaRecord{Σ}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{(λ}\AgdaSpace{}%
+\AgdaBound{z}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaRecord{Σ}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaPostulate{woman}\AgdaSpace{}%
+\AgdaBound{z}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{(λ}\AgdaSpace{}%
+\AgdaBound{\AgdaUnderscore{}}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaPostulate{love}\AgdaSpace{}%
+\AgdaPostulate{j}\AgdaSpace{}%
+\AgdaBound{z}\AgdaSymbol{))}\<%
+\\
+%
+\>[4]\AgdaFunction{womanJonLoves}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{emlaw}\AgdaSpace{}%
+\AgdaPostulate{j}\AgdaSpace{}%
+\AgdaPostulate{johnMan}\<%
+\\
+%
+\>[4]\AgdaComment{-- thePerson : e}\<%
+\\
+%
+\>[4]\AgdaComment{-- thePerson = proj₁ womanJonLoves}\<%
+\\
+%
+\>[4]\AgdaComment{-- thePersonIsWoman : woman (thePerson)}\<%
+\\
+%
+\>[4]\AgdaComment{-- thePersonIsWoman = proj₁ (proj₂ womanJonLoves)}\<%
+\\
+%
+\>[4]\AgdaComment{-- jonLovesThePerson : love j thePerson}\<%
+\\
+%
+\>[4]\AgdaComment{-- jonLovesThePerson = proj₂ (proj₂ womanJonLoves)}\<%
+\end{code}
+
+We note this is the first interpretation of love. In the alternative
+presentation we see that if there is a woman every man loves, that our semantic
+theory interprets her as a person, the evidence that person is a woman, and the
+evidence that every man loves that person. Since every man loves that person,
+John certainly does as well.
+
+\begin{code}%
+\>[0]\AgdaComment{-- (ii)}\<%
+\\
+\>[0]\AgdaFunction{jlaw'}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{everyManLovesAWoman'}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{johnLovesAWoman'}\<%
+\\
+\>[0]\AgdaFunction{jlaw'}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{person}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{personIsWoman}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{everyManLovesPerson}\AgdaSpace{}%
+\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\<%
+\\
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaBound{person}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{personIsWoman}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{everyManLovesPerson}\AgdaSpace{}%
+\AgdaPostulate{j}\AgdaSpace{}%
+\AgdaPostulate{johnMan}\<%
+\end{code}
+
+Finally, we can know that some man loves a woman by virtue of the fact that John
+loves a woman and John is a man. We note that the proofs just articulate the
+data in different order.
+
+\begin{code}%
+\>[0]\AgdaFunction{smlw}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{johnLovesAWoman}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{someManLovesAWoman}\<%
+\\
+\>[0]\AgdaFunction{smlw}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{w}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{wWoman}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{jlovesw}\AgdaSpace{}%
+\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaPostulate{j}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaPostulate{johnMan}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{w}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{wWoman}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{jlovesw}\<%
+\\
+\>[0]\AgdaFunction{smlw'}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{johnLovesAWoman'}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaFunction{someManLovesAWoman'}\<%
+\\
+\>[0]\AgdaFunction{smlw'}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{w}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{wWoman}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{jlovesw}\AgdaSpace{}%
+\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{w}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{wWoman}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaPostulate{j}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaPostulate{johnMan}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{jlovesw}\<%
+\end{code}
+
+While the Montagovian approach is historically interesting and still incredibly
+significant in linguistic semantics, the interpretation of various parts of
+speech and their means of syntactic combination doesn't always seem to be intuitively reflected in the types. Dependent type theories, or MTTs, which have a more expressive type system, gives us a means of more intuitively encoding the meanings.
+
+This use of a ``fancier" type theory for NL semantics can be viewed as analagous
+to a preference of inductively defined numbers over Von Neumman or Chruch
+encodings. While the latter constructions are interesting and important
+historically, they aren't easy to work with and don't match our intuition.
+Nonetheless, the different encodings of numbers in different foundations can be
+proven sound and complete with respect to each other, so that one can rest
+assured that the intuitive notion of number is captured by all of them.
+
+Unlike in formal mathematics, however, to capturing semantics in different
+foundational theories suggests no way of proving soundness or completeness with
+respect to the interpretation of different phrases, as the set of semantically
+fluent utterances are not inductively defined. One may instead take a pragmatic
+approach and see the difficulties arising when doing inference with respect to
+different type theories.

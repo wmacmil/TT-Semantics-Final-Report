@@ -1,0 +1,349 @@
+\begin{code}%
+\>[0]\<%
+\\
+\>[0]\AgdaSymbol{\{-\#}\AgdaSpace{}%
+\AgdaKeyword{OPTIONS}\AgdaSpace{}%
+\AgdaPragma{--type-in-type}\AgdaSpace{}%
+\AgdaSymbol{\#-\}}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{module}%
+\>[3I]\AgdaModule{Mont}\<%
+\\
+\>[3I][@{}l@{\AgdaIndent{0}}]%
+\>[10]\AgdaComment{-- (t : Set)}\<%
+\\
+%
+\>[10]\AgdaComment{-- (IsTrue : t -> Set)}\<%
+\\
+%
+\>[10]\AgdaSymbol{(}\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{open}\AgdaSpace{}%
+\AgdaKeyword{import}\AgdaSpace{}%
+\AgdaModule{Data.Product}\AgdaSpace{}%
+\AgdaKeyword{using}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaRecord{Σ}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}×\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{\AgdaUnderscore{},\AgdaUnderscore{}}}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaField{proj₁}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaField{proj₂}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaFunction{∃}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaFunction{Σ-syntax}\AgdaSymbol{;}\AgdaSpace{}%
+\AgdaFunction{∃-syntax}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaComment{-- open import Data.Sigma}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{data}\AgdaSpace{}%
+\AgdaDatatype{Falsity}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaPrimitive{Set}\AgdaSpace{}%
+\AgdaKeyword{where}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaFunction{t}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaPrimitive{Set}\<%
+\\
+\>[0]\AgdaFunction{VP}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\\
+\>[0]\AgdaFunction{NP}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{VP}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaFunction{t}%
+\>[14]\AgdaComment{--- (e -> t) -> t}\<%
+\\
+\>[0]\AgdaFunction{CN}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaFunction{properNoun}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaFunction{NP}\<%
+\\
+\>[0]\AgdaFunction{properNoun}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaBound{x}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- Definition VP:= forall (subjectClass : CN), object -> Prop. (* subject *)}\<%
+\\
+\>[0]\AgdaComment{-- Definition all:= fun A:CN=> fun P:A->Prop=> forall x:A, P(x).}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaFunction{every}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{CN}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaFunction{VP}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaFunction{t}\AgdaSpace{}%
+\AgdaComment{-- uttery useless as a proposition (this useful as a PROGRAM)}\<%
+\\
+\>[0]\AgdaFunction{every}\AgdaSpace{}%
+\AgdaBound{cn}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSymbol{)}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaBound{cn}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaBound{x}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- Definition every\AgdaUnderscore{}Det : Det := fun cn vp => forall x, cn x -> vp x.}\<%
+\\
+\>[0]\AgdaComment{-- Definition some\AgdaUnderscore{}Det : Det := fun cn vp => exists x, cn x /\textbackslash{} vp x.}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaFunction{some}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{CN}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaFunction{VP}\AgdaSpace{}%
+\AgdaSymbol{->}\AgdaSpace{}%
+\AgdaFunction{t}\<%
+\\
+\>[0]\AgdaFunction{some}\AgdaSpace{}%
+\AgdaBound{cn}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaFunction{Σ[}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaFunction{∈}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSpace{}%
+\AgdaFunction{]}\AgdaSpace{}%
+\AgdaSymbol{(}\AgdaBound{cn}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSpace{}%
+\AgdaOperator{\AgdaFunction{×}}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaBound{x}\AgdaSymbol{)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- a : CN -> VP -> t}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{module}%
+\>[83I]\AgdaModule{Example}\<%
+\\
+\>[83I][@{}l@{\AgdaIndent{0}}]%
+\>[9]\AgdaSymbol{(}\AgdaBound{walk}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{VP}\AgdaSymbol{)}\<%
+\\
+%
+\>[9]\AgdaSymbol{(}\AgdaBound{man}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{CN}\AgdaSymbol{)}\<%
+\\
+%
+\>[9]\AgdaSymbol{(}\AgdaBound{JOHN}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{e}\AgdaSymbol{)}\<%
+\\
+%
+\>[9]\AgdaSymbol{(}\AgdaBound{johnMan}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaBound{man}\AgdaSpace{}%
+\AgdaBound{JOHN}\AgdaSymbol{)}\<%
+\\
+%
+\>[9]\AgdaSymbol{(}\AgdaBound{p}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{every}\AgdaSpace{}%
+\AgdaBound{man}\AgdaSpace{}%
+\AgdaBound{walk}\AgdaSymbol{)}\<%
+\\
+\>[.][@{}l@{}]\<[83I]%
+\>[7]\AgdaKeyword{where}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaFunction{john}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{NP}\<%
+\\
+%
+\>[2]\AgdaFunction{john}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaSymbol{λ}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaSymbol{→}\AgdaSpace{}%
+\AgdaBound{vp}\AgdaSpace{}%
+\AgdaBound{JOHN}\<%
+\\
+%
+\>[2]\AgdaComment{-- p' : every man walk}\<%
+\\
+%
+\>[2]\AgdaComment{-- p' x x₁ = \{!!\}}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{johnWalksProof}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{john}\AgdaSpace{}%
+\AgdaBound{walk}\<%
+\\
+%
+\>[2]\AgdaFunction{johnWalksProof}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaBound{JOHN}\AgdaSpace{}%
+\AgdaBound{johnMan}\AgdaSpace{}%
+\AgdaComment{-- p JOHN johnMan}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{someManWalks}\AgdaSpace{}%
+\AgdaSymbol{:}\AgdaSpace{}%
+\AgdaFunction{some}\AgdaSpace{}%
+\AgdaBound{man}\AgdaSpace{}%
+\AgdaBound{walk}\<%
+\\
+%
+\>[2]\AgdaFunction{someManWalks}\AgdaSpace{}%
+\AgdaSymbol{=}\AgdaSpace{}%
+\AgdaBound{JOHN}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{johnMan}\AgdaSpace{}%
+\AgdaOperator{\AgdaInductiveConstructor{,}}\AgdaSpace{}%
+\AgdaBound{p}\AgdaSpace{}%
+\AgdaBound{JOHN}\AgdaSpace{}%
+\AgdaBound{johnMan}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{----irish delegate}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- Definition IntersectiveA := object -> Prop.}\<%
+\\
+\>[0]\AgdaComment{-- Parameter irish\AgdaUnderscore{}A : IntersectiveA .}\<%
+\\
+\>[0]\AgdaComment{-- Definition N:= object->Prop.}\<%
+\\
+\>[0]\AgdaComment{-- Parameter on\AgdaUnderscore{}time\AgdaUnderscore{}Adv : VeridicalAdv .}\<%
+\\
+\>[0]\AgdaComment{-- Definition VeridicalAdv :=}\<%
+\\
+\>[0]\AgdaComment{-- \{ adv : (object -> Prop) -> (object -> Prop)}\<%
+\\
+\>[0]\AgdaComment{-- \& prod (forall (x : object) (v : object -> Prop), (adv v) x -> v x)}\<%
+\\
+\>[0]\AgdaComment{-- (forall (v w : object -> Prop), (forall x, v x -> w x) -> forall (x : object), adv v x -> adv w x)}\<%
+\\
+\>[0]\AgdaComment{-- \}.jqj}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- intersectiveA = object → Set}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- N = object → Set}\<%
+\\
+\>[0]\AgdaComment{-- V2 = object → object → Set}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- veridicalAdv : Set}\<%
+\\
+\>[0]\AgdaComment{-- veridicalAdv = Σ[ adv ∈ ((object → Set) → (object → Set)) ]}\<%
+\\
+\>[0]\AgdaComment{--   (( x : object) (v : object → Set) → (adv v) x → v x) ×}\<%
+\\
+\>[0]\AgdaComment{--   ((v w : object → Set) → (∀ x → v x → w x) → ∀ (x : object) → adv v x → adv w x)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- postulate}\<%
+\\
+\>[0]\AgdaComment{--   survey\AgdaUnderscore{}N : N}\<%
+\\
+\>[0]\AgdaComment{--   delegate\AgdaUnderscore{}N : N}\<%
+\\
+\>[0]\AgdaComment{--   irishA : intersectiveA}\<%
+\\
+\>[0]\AgdaComment{--   on\AgdaUnderscore{}time\AgdaUnderscore{}Adv : veridicalAdv}\<%
+\\
+\>[0]\AgdaComment{--   finish\AgdaUnderscore{}V2 : V2}\<%
+\\
+\>[0]\AgdaComment{--   environment : (object -> Set) -> object}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- asdf = λ (y : object) → finish\AgdaUnderscore{}V2 (environment survey\AgdaUnderscore{}N) y × survey\AgdaUnderscore{}N (environment survey\AgdaUnderscore{}N)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- helper1 = Σ[ x ∈ object ] ((irishA x) × delegate\AgdaUnderscore{}N x) ×  \{!asdf !\}}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- H : exists x : object,}\<%
+\\
+\>[0]\AgdaComment{-- (irish\AgdaUnderscore{}A x /\textbackslash{} delegate\AgdaUnderscore{}N x) /\textbackslash{}}\<%
+\\
+\>[0]\AgdaComment{-- (let (a, \AgdaUnderscore{}) := on\AgdaUnderscore{}time\AgdaUnderscore{}Adv in a)}\<%
+\\
+\>[0]\AgdaComment{-- (fun y : object =>}\<%
+\\
+\>[0]\AgdaComment{-- finish\AgdaUnderscore{}V2 (environment survey\AgdaUnderscore{}N) y /\textbackslash{}}\<%
+\\
+\>[0]\AgdaComment{-- survey\AgdaUnderscore{}N (environment survey\AgdaUnderscore{}N)) x}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- veridicalAdv : \{!!\}}\<%
+\\
+\>[0]\AgdaComment{-- veridicalAdv = Σ \{!!\} \{!!\}}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{-- Σ[ adv ∈ (object → Set) → (object → Set)]}\<%
+\\
+\>[0]\AgdaComment{-- intersectiveA = object → Set}\<%
+\\
+\>[0]\<%
+\end{code}
+
